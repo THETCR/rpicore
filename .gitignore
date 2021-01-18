@@ -7,12 +7,13 @@ reset-files.bash
 *.tar.gz
 
 *.exe
-src/rpicoin
-src/rpicoind
-src/rpicoin-cli
-src/rpicoin-tx
-src/test/test_rpicoin
-src/qt/test/test_rpicoin-qt
+src/pivx
+src/pivxd
+src/pivx-cli
+src/pivx-tx
+src/bench/bench_pivx
+src/test/test_pivx
+src/qt/test/test_pivx-qt
 
 # autoreconf
 Makefile.in
@@ -38,8 +39,8 @@ confdefs.h
 conftest.cpp
 conftest.err
 libtool
-src/config/rpicoin-config.h
-src/config/rpicoin-config.h.in
+src/config/pivx-config.h
+src/config/pivx-config.h.in
 src/config/stamp-h1
 share/setup.nsi
 share/qt/Info.plist
@@ -64,7 +65,8 @@ src/qt/test/moc*.cpp
 *.pyc
 *.o
 *.o-*
-.rpicoin
+*.patch
+.pivx
 *.a
 *.pb.cc
 *.pb.h
@@ -73,6 +75,7 @@ src/qt/test/moc*.cpp
 *.trs
 *.dmg
 
+*.json.h
 *.raw.h
 
 #libtool object files
@@ -82,13 +85,18 @@ src/qt/test/moc*.cpp
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-rpicoin-qt
-RPICOIN-Qt.app
+pivx-qt
+PIVX-Qt.app
 background.tiff*
+
+# Rust
+.cargo/.configured-for-*
+.cargo/config
+target/
 
 # Unit-tests
 Makefile.test
-rpicoin-qt_test
+pivx-qt_test
 src/test/buildenv.py
 
 # Resources cpp
@@ -104,7 +112,7 @@ build
 #lcov
 *.gcno
 /*.info
-test_rpicoin.coverage/
+test_pivx.coverage/
 total.coverage/
 coverage_percent.txt
 
@@ -130,3 +138,10 @@ libbitcoinconsensus.pc
 .idea
 CMakeLists.txt
 cmake-build-debug
+
+moc_*
+*.tmp
+ui_*
+build*
+pivxd.*
+pivxd-new-gui.*

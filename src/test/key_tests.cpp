@@ -1,5 +1,5 @@
 // Copyright (c) 2012-2013 The Bitcoin Core developers
-// Copyright (c) 2017-2018 The PIVX developers
+// Copyright (c) 2017-2019 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -18,17 +18,17 @@
 #include <boost/test/unit_test.hpp>
 
 
-static const std::string strSecret1     ("5sM6UfSr3P3q19q4MYMjAGyVBhAav8PSknA2n8BxEs6tzQLWzuw");
-static const std::string strSecret2     ("5t5SuyQwFhTv3vmkJJ8drkGaSy2BZxf6LvzQKmA8sMBy7XpK4dE");
-static const std::string strSecret1C    ("NVDhB6h5TWKUsfy7ofQV5wWKQCHJhVc4gEJrrAjLpC92TxAKuXpZ ");
-static const std::string strSecret2C    ("NYSdNozeTsbo9vLW7LchgZykdcGDeUf8ayJMwouKjE7QfhNnyguS");
-static const CBitcoinAddress addr1 ("RVkJiBPNu1jLiqGLMbLgPmLVNSpBVXV9B9");
-static const CBitcoinAddress addr2 ("RFyKnRtoMsFyRtQbczdGq3ozRqA6oBmHmB");
-static const CBitcoinAddress addr1C("RMGb41wtig6HMKokNdTkVNagzfAH8weEXW");
-static const CBitcoinAddress addr2C("RQQHk8vGJ7dPpSrK3msEwCfD2Bq4cL99jf");
+static const std::string strSecret1  = "5sM6UfSr3P3q19q4MYMjAGyVBhAav8PSknA2n8BxEs6tzQLWzuw";
+static const std::string strSecret2  = "5t5SuyQwFhTv3vmkJJ8drkGaSy2BZxf6LvzQKmA8sMBy7XpK4dE";
+static const std::string strSecret1C = "NVDhB6h5TWKUsfy7ofQV5wWKQCHJhVc4gEJrrAjLpC92TxAKuXpZ";
+static const std::string strSecret2C = "NYSdNozeTsbo9vLW7LchgZykdcGDeUf8ayJMwouKjE7QfhNnyguS";
+static const std::string addr1 = "RVkJiBPNu1jLiqGLMbLgPmLVNSpBVXV9B9";
+static const std::string addr2 = "RFyKnRtoMsFyRtQbczdGq3ozRqA6oBmHmB";
+static const std::string addr1C = "RMGb41wtig6HMKokNdTkVNagzfAH8weEXW";
+static const std::string addr2C = "RQQHk8vGJ7dPpSrK3msEwCfD2Bq4cL99jf";
 
 
-static const std::string strAddressBad("Xta1praZQjyELweyMByXyiREw1ZRsjXzVP");
+static const std::string strAddressBad ="Xta1praZQjyELweyMByXyiREw1ZRsjXzVP";
 
 //#define KEY_TESTS_DUMPINFO
 #ifdef KEY_TESTS_DUMPINFO
@@ -44,16 +44,12 @@ void dumpKeyInfo(uint256 privkey)
 
     for (int nCompressed=0; nCompressed<2; nCompressed++)
     {
-        bool fCompressed = nCompressed == 1;
-        printf("  * %s:\n", fCompressed ? "compressed" : "uncompressed");
-        CBitcoinSecret bsecret;
-        bsecret.SetSecret(secret, fCompressed);
-        printf("    * secret (base58): %s\n", bsecret.ToString().c_str());
+        printf("    * secret (base58): %s\n", EncodeSecret(secret));
         CKey key;
         key.SetSecret(secret, fCompressed);
         std::vector<unsigned char> vchPubKey = key.GetPubKey();
         printf("    * pubkey (hex): %s\n", HexStr(vchPubKey).c_str());
-        printf("    * address (base58): %s\n", CBitcoinAddress(vchPubKey).ToString().c_str());
+        printf("    * address (base58): %s\n", EncodeDestination(vchPubKey).c_str());
     }
 }
 #endif
@@ -62,21 +58,16 @@ BOOST_FIXTURE_TEST_SUITE(key_tests, TestingSetup)
 
 BOOST_AUTO_TEST_CASE(key_test1)
 {
-    CBitcoinSecret bsecret1, bsecret2, bsecret1C, bsecret2C, baddress1;
-    BOOST_CHECK( bsecret1.SetString (strSecret1));
-    BOOST_CHECK( bsecret2.SetString (strSecret2));
-    BOOST_CHECK( bsecret1C.SetString(strSecret1C));
-    BOOST_CHECK( bsecret2C.SetString(strSecret2C));
-    BOOST_CHECK(!baddress1.SetString(strAddressBad));
-
-    CKey key1  = bsecret1.GetKey();
-    BOOST_CHECK(key1.IsCompressed() == false);
-    CKey key2  = bsecret2.GetKey();
-    BOOST_CHECK(key2.IsCompressed() == false);
-    CKey key1C = bsecret1C.GetKey();
-    BOOST_CHECK(key1C.IsCompressed() == true);
-    CKey key2C = bsecret2C.GetKey();
-    BOOST_CHECK(key2C.IsCompressed() == true);
+    CKey key1  = DecodeSecret(strSecret1);
+    BOOST_CHECK(key1.IsValid() && !key1.IsCompressed());
+    CKey key2  = DecodeSecret(strSecret2);
+    BOOST_CHECK(key2.IsValid() && !key2.IsCompressed());
+    CKey key1C = DecodeSecret(strSecret1C);
+    BOOST_CHECK(key1C.IsValid() && key1C.IsCompressed());
+    CKey key2C = DecodeSecret(strSecret2C);
+    BOOST_CHECK(key2C.IsValid() && key2C.IsCompressed());
+    CKey bad_key = DecodeSecret(strAddressBad);
+    BOOST_CHECK(!bad_key.IsValid());
 
     CPubKey pubkey1  = key1. GetPubKey();
     CPubKey pubkey2  = key2. GetPubKey();
@@ -102,10 +93,10 @@ BOOST_AUTO_TEST_CASE(key_test1)
     BOOST_CHECK(!key2C.VerifyPubKey(pubkey2));
     BOOST_CHECK(key2C.VerifyPubKey(pubkey2C));
 
-    BOOST_CHECK(addr1.Get()  == CTxDestination(pubkey1.GetID()));
-    BOOST_CHECK(addr2.Get()  == CTxDestination(pubkey2.GetID()));
-    BOOST_CHECK(addr1C.Get() == CTxDestination(pubkey1C.GetID()));
-    BOOST_CHECK(addr2C.Get() == CTxDestination(pubkey2C.GetID()));
+    BOOST_CHECK(DecodeDestination(addr1)  == CTxDestination(pubkey1.GetID()));
+    BOOST_CHECK(DecodeDestination(addr2)  == CTxDestination(pubkey2.GetID()));
+    BOOST_CHECK(DecodeDestination(addr1C) == CTxDestination(pubkey1C.GetID()));
+    BOOST_CHECK(DecodeDestination(addr2C) == CTxDestination(pubkey2C.GetID()));
 
     for (int n=0; n<16; n++)
     {

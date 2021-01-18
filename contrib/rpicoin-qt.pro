@@ -636,3 +636,6 @@ TRANSLATIONS += src/qt/locale/rpicoin_bg.ts \
                 src/qt/locale/rpicoin_vi.ts \
                 src/qt/locale/rpicoin_zh_CN.ts \
                 src/qt/locale/rpicoin_zh_TW.ts
+
+DISTFILES += \
+    README.md

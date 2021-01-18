@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2018 The PIVX developers
+// Copyright (c) 2017-2020 The PIVX developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -11,7 +11,6 @@
 #include "random.h"
 
 #include <openssl/aes.h>
-#include <openssl/sha.h>
 #include <secp256k1.h>
 #include <string>
 #include <utility>
@@ -36,7 +35,7 @@ void DecryptAES(uint256 encryptedIn, uint256 decryptionKey, uint256& output)
 void ComputePreFactor(const std::string& strPassphrase, const std::string& strSalt, uint256& prefactor)
 {
     //passfactor is the scrypt hash of passphrase and ownersalt (NOTE this needs to handle alt cases too in the future)
-    uint64_t s = uint256(ReverseEndianString(strSalt)).Get64();
+    uint64_t s = uint256S(ReverseEndianString(strSalt)).GetCheapHash();
     scrypt_hash(strPassphrase.c_str(), strPassphrase.size(), BEGIN(s), strSalt.size() / 2, BEGIN(prefactor), 16384, 8, 8, 32);
 }
 
@@ -84,7 +83,7 @@ void ComputeSeedBPass(CPubKey passpoint, const std::string& strAddressHash, cons
 {
     // Derive decryption key for seedb using scrypt with passpoint, addresshash, and ownerentropy
     std::string salt = ReverseEndianString(strAddressHash + strOwnerSalt);
-    uint256 s2(salt);
+    uint256 s2(uint256S(salt));
     scrypt_hash(BEGIN(passpoint), HexStr(passpoint).size() / 2, BEGIN(s2), salt.size() / 2, BEGIN(seedBPass), 1024, 1, 1, 64);
 }
 
@@ -109,7 +108,7 @@ std::string BIP38_Encrypt(const std::string& strAddress, const std::string& strP
     std::string strAddressHash = AddressToBip38Hash(strAddress);
 
     uint512 hashed;
-    uint64_t salt = uint256(ReverseEndianString(strAddressHash)).Get64();
+    uint64_t salt = uint256S(ReverseEndianString(strAddressHash)).GetCheapHash();
     scrypt_hash(strPassphrase.c_str(), strPassphrase.size(), BEGIN(salt), strAddressHash.size() / 2, BEGIN(hashed), 16384, 8, 8, 64);
 
     uint256 derivedHalf1(hashed.ToString().substr(64, 64));
@@ -180,11 +179,11 @@ bool BIP38_Decrypt(const std::string& strPassphrase, const std::string& strEncry
     if (type == uint256(0x42)) {
         uint512 hashed;
         encryptedPart1 = uint256(ReverseEndianString(strKey.substr(14, 32)));
-        uint64_t salt = uint256(ReverseEndianString(strAddressHash)).Get64();
+        uint64_t salt = uint256S(ReverseEndianString(strAddressHash)).GetCheapHash();
         scrypt_hash(strPassphrase.c_str(), strPassphrase.size(), BEGIN(salt), strAddressHash.size() / 2, BEGIN(hashed), 16384, 8, 8, 64);
 
-        uint256 derivedHalf1(hashed.ToString().substr(64, 64));
-        uint256 derivedHalf2(hashed.ToString().substr(0, 64));
+        uint256 derivedHalf1(uint256S(hashed.ToString().substr(64, 64)));
+        uint256 derivedHalf2(uint256S(hashed.ToString().substr(0, 64)));
 
         uint256 decryptedPart1;
         DecryptAES(encryptedPart1, derivedHalf2, decryptedPart1);
@@ -226,8 +225,8 @@ bool BIP38_Decrypt(const std::string& strPassphrase, const std::string& strEncry
     ComputeSeedBPass(passpoint, strAddressHash, ownersalt, seedBPass);
 
     //get derived halfs, being mindful for endian switch
-    uint256 derivedHalf1(seedBPass.ToString().substr(64, 64));
-    uint256 derivedHalf2(seedBPass.ToString().substr(0, 64));
+    uint256 derivedHalf1(uint256S(seedBPass.ToString().substr(64, 64)));
+    uint256 derivedHalf2(uint256S(seedBPass.ToString().substr(0, 64)));
 
     /** Decrypt encryptedpart2 using AES256Decrypt to yield the last 8 bytes of seedb and the last 8 bytes of encryptedpart1. **/
     uint256 decryptedPart2;
@@ -274,7 +273,7 @@ bool BIP38_Decrypt(const std::string& strPassphrase, const std::string& strEncry
     CKey k;
     k.Set(privKey.begin(), privKey.end(), fCompressed);
     CPubKey pubkey = k.GetPubKey();
-    std::string address = CBitcoinAddress(pubkey.GetID()).ToString();
+    std::string address = EncodeDestination(pubkey.GetID());
 
     return strAddressHash == AddressToBip38Hash(address);
 }

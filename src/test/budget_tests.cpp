@@ -1,4 +1,4 @@
-// Copyright (c) 2018 The PIVX developers
+// Copyright (c) 2018-2020 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -22,12 +22,12 @@ void CheckBudgetValue(int nHeight, std::string strNetwork, CAmount nExpectedValu
 BOOST_AUTO_TEST_CASE(budget_value)
 {
     SelectParams(CBaseChainParams::TESTNET);
-    int nHeightTest = Params().NEW_PROTOCOLS_STARTHEIGHT() + 1;
-    CheckBudgetValue(nHeightTest, "testnet", 0*COIN);
+    int nHeightTest = Params().GetConsensus().vUpgrades[Consensus::UPGRADE_ZC_V2].nActivationHeight + 1;
+    CheckBudgetValue(nHeightTest, "testnet", 7300*COIN);
 
     SelectParams(CBaseChainParams::MAIN);
-    nHeightTest = Params().NEW_PROTOCOLS_STARTHEIGHT() + 1;
-    CheckBudgetValue(nHeightTest, "mainnet", 0*COIN);
+    nHeightTest = Params().GetConsensus().vUpgrades[Consensus::UPGRADE_ZC_V2].nActivationHeight + 1;
+    CheckBudgetValue(nHeightTest, "mainnet", 43200*COIN);
 }
 
 BOOST_AUTO_TEST_SUITE_END()

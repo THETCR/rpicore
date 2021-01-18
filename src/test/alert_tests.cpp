@@ -1,4 +1,5 @@
 // Copyright (c) 2013 The Bitcoin Core developers
+// Copyright (c) 2019-2020 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -6,20 +7,11 @@
 // Unit tests for alert system
 //
 
-#include "alert.h"
-#include "clientversion.h"
-#include "data/alertTests.raw.h"
-
-#include "serialize.h"
-#include "streams.h"
+#include "chainparams.h"
 #include "util.h"
-#include "utilstrencodings.h"
 
 #include "test/test_wispr.h"
 
-#include <fstream>
-
-#include <boost/filesystem/operations.hpp>
 #include <boost/test/unit_test.hpp>
 
 #if 0
@@ -151,11 +143,7 @@ BOOST_AUTO_TEST_CASE(AlertApplies)
 
     BOOST_CHECK(!alerts[2].AppliesTo(1, "/Satoshi:0.3.0/"));
 
-    SetMockTime(0);
-}
-
-
-BOOST_AUTO_TEST_CASE(AlertNotify)
+BOOST_AUTO_TEST_CASE(PartitionAlert)
 {
     SetMockTime(11);
 

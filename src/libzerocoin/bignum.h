@@ -98,22 +98,17 @@ public:
     std::string GetHex() const;
     std::string GetDec() const;
 
-    unsigned int GetSerializeSize(int nType=0, int nVersion=PROTOCOL_VERSION) const
+    template<typename Stream>
+    void Serialize(Stream& s) const
     {
-        return ::GetSerializeSize(getvch(), nType, nVersion);
+        ::Serialize(s, getvch());
     }
 
     template<typename Stream>
-    void Serialize(Stream& s, int nType=0, int nVersion=PROTOCOL_VERSION) const
-    {
-        ::Serialize(s, getvch(), nType, nVersion);
-    }
-
-    template<typename Stream>
-    void Unserialize(Stream& s, int nType=0, int nVersion=PROTOCOL_VERSION)
+    void Unserialize(Stream& s)
     {
         std::vector<unsigned char> vch;
-        ::Unserialize(s, vch, nType, nVersion);
+        ::Unserialize(s, vch);
         setvch(vch);
     }
 
@@ -345,5 +340,12 @@ inline bool operator>(const CBigNum& a, const CBigNum& b)  { return (mpz_cmp(a.b
 
 inline std::ostream& operator<<(std::ostream &strm, const CBigNum &b) { return strm << b.ToString(10); }
 
-using Bignum = CBigNum;
+typedef CBigNum Bignum;
+
+/** constant bignum instances */
+const CBigNum BN_ZERO = CBigNum(0);
+const CBigNum BN_ONE = CBigNum(1);
+const CBigNum BN_TWO = CBigNum(2);
+const CBigNum BN_THREE = CBigNum(3);
+
 #endif

@@ -34,6 +34,7 @@ namespace libzerocoin
     bool IsValidSerial(const ZerocoinParams* params, const CBigNum& bnSerial);
     bool IsValidCommitmentToCoinRange(const ZerocoinParams* params, const CBigNum& bnCommitment);
     CBigNum GetAdjustedSerial(const CBigNum& bnSerial);
+    CBigNum ExtractSerialFromPubKey(const CPubKey pubkey);
     bool GenerateKeyPair(const CBigNum& bnGroupOrder, const uint256& nPrivkey, CKey& key, CBigNum& bnSerial);
 
 /** A Public coin is the part of a coin that
@@ -75,7 +76,7 @@ public:
 
     ADD_SERIALIZE_METHODS;
     template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
+    inline void SerializationOp(Stream& s, Operation ser_action)
     {
         READWRITE(value);
         READWRITE(denomination);
@@ -129,7 +130,7 @@ public:
 
     ADD_SERIALIZE_METHODS;
     template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
+    inline void SerializationOp(Stream& s, Operation ser_action)
     {
         READWRITE(publicCoin);
         READWRITE(randomness);

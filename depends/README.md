@@ -22,8 +22,6 @@ created. To use it for Bitcoin:
 
 Common `host-platform-triplets` for cross compilation are:
 
-- `i686-pc-linux-gnu` for Linux 32 bit
-- `x86_64-pc-linux-gnu` for x86 Linux
 - `x86_64-w64-mingw32` for Win64
 - `x86_64-apple-darwin14` for macOS
 - `arm-linux-gnueabihf` for Linux ARM 32 bit
@@ -75,7 +73,9 @@ The following can be set when running make: make FOO=bar
     NO_ZMQ: Don't download/build/cache packages needed for enabling zeromq
     NO_WALLET: Don't download/build/cache libs needed to enable the wallet
     NO_UPNP: Don't download/build/cache packages needed for enabling upnp
+    NO_RUST: Don't download/build/cache rust packages (including librustzcash)
     DEBUG: disable some optimizations and enable more runtime checking
+    LIBRUSTZCASH_OVERRIDE: Path to a local librustzcash repository
     RAPIDCHECK: build rapidcheck (experimental, requires cmake)
     HOST_ID_SALT: Optional salt to use when generating host package ids
     BUILD_ID_SALT: Optional salt to use when generating build package ids

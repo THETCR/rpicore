@@ -9,7 +9,7 @@
  * @copyright  Copyright 2013 Ian Miers, Christina Garman and Matthew Green
  * @license    This project is released under the MIT license.
  **/
-// Copyright (c) 2017-2018 The PIVX developers
+// Copyright (c) 2017-2019 The PIVX developers
 
 #include <string>
 #include <iostream>
@@ -41,76 +41,76 @@ PrintWarning()
 
 void usage()
 {
-	printf("Usage:\n");
-	printf(" -b <numbits>\n");
-	printf(" -o <output file>\n");
+    printf("Usage:\n");
+    printf(" -b <numbits>\n");
+    printf(" -o <output file>\n");
 
-	exit (8);
+    exit (8);
 }
 
 int main(int argc, char **argv)
 {
-	static CBigNum resultModulus(0);
-	uint32_t numBits = DEFAULT_MODULUS_SIZE;
-	ofstream outfile;
-	char* outfileName;
-	bool writeToFile = false;
+    static CBigNum resultModulus(0);
+    uint32_t numBits = DEFAULT_MODULUS_SIZE;
+    ofstream outfile;
+    char* outfileName;
+    bool writeToFile = false;
 
-	while ((argc > 1) && (argv[1][0] == '-'))
-	{
-		switch (argv[1][1])
-		{
-		case 'b':
-			numBits = atoi(argv[2]);
-			++argv;
-			--argc;
-			break;
+    while ((argc > 1) && (argv[1][0] == '-'))
+    {
+        switch (argv[1][1])
+        {
+        case 'b':
+            numBits = atoi(argv[2]);
+            ++argv;
+            --argc;
+            break;
 
-		case 'o':
-			outfileName = argv[2];
-			writeToFile = true;
-			break;
+        case 'o':
+            outfileName = argv[2];
+            writeToFile = true;
+            break;
 
-		case 'h':
-			usage();
-			break;
+        case 'h':
+            usage();
+            break;
 
-		default:
-			printf("Wrong Argument: %s\n", argv[1]);
-			usage();
-			break;
-		}
+        default:
+            printf("Wrong Argument: %s\n", argv[1]);
+            usage();
+            break;
+        }
 
-		++argv;
-		--argc;
-	}
+        ++argv;
+        --argc;
+    }
 
 	if (numBits < MIN_MODULUS_SIZE) {
 		std::cout << "Modulus is below minimum length (" << MIN_MODULUS_SIZE << ") bits" << std::endl;
 		return(0);
 	}
 
-	PrintWarning();
+    PrintWarning();
 
 	std::cout << "Modulus size set to " << numBits << " bits." << std::endl;
 	std::cout << "Generating parameters. This may take a few minutes..." << std::endl;
 
-	// Generate two safe primes "p" and "q"
-	CBigNum *p, *q;
-	p = new CBigNum(0);
-	q = new CBigNum(0);
-	*p = CBigNum::generatePrime(numBits / 2, true);
-	*q = CBigNum::generatePrime(numBits / 2, true);
+    // Generate two safe primes "p" and "q"
+    CBigNum *p, *q;
+    p = new CBigNum(0);
+    q = new CBigNum(0);
+    *p = CBigNum::generatePrime(numBits / 2, true);
+    *q = CBigNum::generatePrime(numBits / 2, true);
 
-	// Multiply to compute N
-	resultModulus = (*p) * (*q);
+    // Multiply to compute N
+    resultModulus = (*p) * (*q);
 
-	// Wipe out the factors
-	delete p;
-	delete q;
+    // Wipe out the factors
+    delete p;
+    delete q;
 
-	// Convert to a hexidecimal string
-	std::string resultHex = resultModulus.ToString(16);
+    // Convert to a hexidecimal string
+    std::string resultHex = resultModulus.ToString(16);
 
 	std::cout << std::endl << "N = " << std::endl << resultHex << std::endl;
 
@@ -120,7 +120,7 @@ int main(int argc, char **argv)
 			outfile << resultHex;
 			outfile.close();
 			std::cout << std::endl << "Result has been written to file '" << outfileName << "'." << std::endl;
-		} catch (std::runtime_error &e) {
+		} catch (const std::runtime_error& e) {
 			std::cout << "Unable to write to file:" << e.what() << std::endl;
 		}
 	}

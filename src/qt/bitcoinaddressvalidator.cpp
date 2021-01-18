@@ -59,8 +59,8 @@ QValidator::State BitcoinAddressEntryValidator::validate(QString& input, int& po
 
     // Validation
     QValidator::State state = QValidator::Acceptable;
-    for (auto idx : input) {
-        int ch = idx.unicode();
+    for (int idx = 0; idx < input.size(); ++idx) {
+        int ch = input.at(idx).unicode();
 
         if (((ch >= '0' && ch <= '9') ||
                 (ch >= 'a' && ch <= 'z') ||
@@ -82,9 +82,9 @@ BitcoinAddressCheckValidator::BitcoinAddressCheckValidator(QObject* parent) : QV
 QValidator::State BitcoinAddressCheckValidator::validate(QString& input, int& pos) const
 {
     Q_UNUSED(pos);
-    // Validate the passed RPICOIN address
-    CBitcoinAddress addr(input.toStdString());
-    if (addr.IsValid())
+    // Validate the passed PIVX address
+    CTxDestination addr = DecodeDestination(input.toStdString());
+    if (IsValidDestination(addr))
         return QValidator::Acceptable;
 
     return QValidator::Invalid;
