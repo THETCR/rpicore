@@ -2,11 +2,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIVX_CORE_NEW_GUI_PIVXGUI_H
-#define PIVX_CORE_NEW_GUI_PIVXGUI_H
+#ifndef RPICOIN_CORE_NEW_GUI_RPICOINGUI_H
+#define RPICOIN_CORE_NEW_GUI_RPICOINGUI_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/pivx-config.h"
+#include "config/rpicoin-config.h"
 #endif
 
 #include <QMainWindow>
@@ -14,16 +14,16 @@
 #include <QSystemTrayIcon>
 #include <QLabel>
 
-#include "qt/pivx/navmenuwidget.h"
-#include "qt/pivx/topbar.h"
-#include "qt/pivx/dashboardwidget.h"
-#include "qt/pivx/send.h"
-#include "qt/pivx/receivewidget.h"
-#include "qt/pivx/addresseswidget.h"
-#include "qt/pivx/coldstakingwidget.h"
-#include "qt/pivx/masternodeswidget.h"
-#include "qt/pivx/snackbar.h"
-#include "qt/pivx/settings/settingswidget.h"
+#include "qt/rpicoin/navmenuwidget.h"
+#include "qt/rpicoin/topbar.h"
+#include "qt/rpicoin/dashboardwidget.h"
+#include "qt/rpicoin/send.h"
+#include "qt/rpicoin/receivewidget.h"
+#include "qt/rpicoin/addresseswidget.h"
+#include "qt/rpicoin/coldstakingwidget.h"
+#include "qt/rpicoin/masternodeswidget.h"
+#include "qt/rpicoin/snackbar.h"
+#include "qt/rpicoin/settings/settingswidget.h"
 #include "qt/rpcconsole.h"
 
 
@@ -34,18 +34,18 @@ class WalletModel;
 
 
 /**
-  PIVX GUI main class. This class represents the main window of the PIVX UI. It communicates with both the client and
+  RPICOIN GUI main class. This class represents the main window of the RPICOIN UI. It communicates with both the client and
   wallet models to give the user an up-to-date view of the current core state.
 */
-class PIVXGUI : public QMainWindow
+class RPICOINGUI : public QMainWindow
 {
     Q_OBJECT
 
 public:
     static const QString DEFAULT_WALLET;
 
-    explicit PIVXGUI(const NetworkStyle* networkStyle, QWidget* parent = 0);
-    ~PIVXGUI();
+    explicit RPICOINGUI(const NetworkStyle* networkStyle, QWidget* parent = 0);
+    ~RPICOINGUI();
 
     /** Set the client model.
         The client model represents the part of the core that communicates with the P2P network, and is wallet-agnostic.
@@ -189,4 +189,4 @@ Q_SIGNALS:
 };
 
 
-#endif //PIVX_CORE_NEW_GUI_PIVXGUI_H
+#endif //RPICOIN_CORE_NEW_GUI_RPICOINGUI_H

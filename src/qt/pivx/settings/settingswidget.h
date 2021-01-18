@@ -6,20 +6,20 @@
 #define SETTINGSWIDGET_H
 
 #include <QWidget>
-#include "qt/pivx/pwidget.h"
-#include "qt/pivx/settings/settingsbackupwallet.h"
-#include "qt/pivx/settings/settingsexportcsv.h"
-#include "qt/pivx/settings/settingsbittoolwidget.h"
-#include "qt/pivx/settings/settingssignmessagewidgets.h"
-#include "qt/pivx/settings/settingswalletrepairwidget.h"
-#include "qt/pivx/settings/settingswalletoptionswidget.h"
-#include "qt/pivx/settings/settingsmainoptionswidget.h"
-#include "qt/pivx/settings/settingsdisplayoptionswidget.h"
-#include "qt/pivx/settings/settingsmultisendwidget.h"
-#include "qt/pivx/settings/settingsinformationwidget.h"
-#include "qt/pivx/settings/settingsconsolewidget.h"
+#include "qt/rpicoin/pwidget.h"
+#include "qt/rpicoin/settings/settingsbackupwallet.h"
+#include "qt/rpicoin/settings/settingsexportcsv.h"
+#include "qt/rpicoin/settings/settingsbittoolwidget.h"
+#include "qt/rpicoin/settings/settingssignmessagewidgets.h"
+#include "qt/rpicoin/settings/settingswalletrepairwidget.h"
+#include "qt/rpicoin/settings/settingswalletoptionswidget.h"
+#include "qt/rpicoin/settings/settingsmainoptionswidget.h"
+#include "qt/rpicoin/settings/settingsdisplayoptionswidget.h"
+#include "qt/rpicoin/settings/settingsmultisendwidget.h"
+#include "qt/rpicoin/settings/settingsinformationwidget.h"
+#include "qt/rpicoin/settings/settingsconsolewidget.h"
 
-class PIVXGUI;
+class RPICOINGUI;
 
 QT_BEGIN_NAMESPACE
 class QDataWidgetMapper;
@@ -34,7 +34,7 @@ class SettingsWidget : public PWidget
     Q_OBJECT
 
 public:
-    explicit SettingsWidget(PIVXGUI* parent);
+    explicit SettingsWidget(RPICOINGUI* parent);
     ~SettingsWidget();
 
     void loadClientModel() override;

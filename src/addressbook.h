@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIVX_ADDRESSBOOK_H
-#define PIVX_ADDRESSBOOK_H
+#ifndef RPICOIN_ADDRESSBOOK_H
+#define RPICOIN_ADDRESSBOOK_H
 
 #include <map>
 #include <string>
@@ -43,4 +43,4 @@ namespace AddressBook {
 
 }
 
-#endif //PIVX_ADDRESSBOOK_H
+#endif //RPICOIN_ADDRESSBOOK_H

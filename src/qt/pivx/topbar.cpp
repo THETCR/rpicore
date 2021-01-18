@@ -2,12 +2,12 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "qt/pivx/topbar.h"
-#include "qt/pivx/forms/ui_topbar.h"
-#include "qt/pivx/lockunlock.h"
-#include "qt/pivx/qtutils.h"
-#include "qt/pivx/receivedialog.h"
-#include "qt/pivx/loadingdialog.h"
+#include "qt/rpicoin/topbar.h"
+#include "qt/rpicoin/forms/ui_topbar.h"
+#include "qt/rpicoin/lockunlock.h"
+#include "qt/rpicoin/qtutils.h"
+#include "qt/rpicoin/receivedialog.h"
+#include "qt/rpicoin/loadingdialog.h"
 #include "askpassphrasedialog.h"
 
 #include "bitcoinunits.h"
@@ -27,7 +27,7 @@
 
 #define REQUEST_UPGRADE_WALLET 1
 
-TopBar::TopBar(PIVXGUI* _mainWindow, QWidget *parent) :
+TopBar::TopBar(RPICOINGUI* _mainWindow, QWidget *parent) :
     PWidget(_mainWindow, parent),
     ui(new Ui::TopBar)
 {
@@ -52,9 +52,9 @@ TopBar::TopBar(PIVXGUI* _mainWindow, QWidget *parent) :
 
     // Amount information top
     ui->widgetTopAmount->setVisible(false);
-    setCssProperty({ui->labelAmountTopPiv}, "amount-small-topbar");
-    setCssProperty({ui->labelAmountPiv}, "amount-topbar");
-    setCssProperty({ui->labelPendingPiv, ui->labelImmaturePiv}, "amount-small-topbar");
+    setCssProperty({ui->labelAmountTopRpi}, "amount-small-topbar");
+    setCssProperty({ui->labelAmountRpi}, "amount-topbar");
+    setCssProperty({ui->labelPendingRpi, ui->labelImmatureRpi}, "amount-small-topbar");
 
     // Progress Sync
     progressBar = new QProgressBar(ui->layoutSync);
@@ -550,7 +550,7 @@ void TopBar::loadWalletModel()
     connect(walletModel, &WalletModel::encryptionStatusChanged, this, &TopBar::refreshStatus);
     // Ask for passphrase if needed
     connect(walletModel, &WalletModel::requireUnlock, this, &TopBar::unlockWallet);
-    // update the display unit, to not use the default ("PIVX")
+    // update the display unit, to not use the default ("RPICOIN")
     updateDisplayUnit();
 
     refreshStatus();
@@ -628,16 +628,16 @@ void TopBar::updateBalances(const interfaces::WalletBalances& newBalance)
     }
     ui->labelTitle1->setText(nLockedBalance > 0 ? tr("Available (Locked included)") : tr("Available"));
 
-    // PIV Total
-    QString totalPiv = GUIUtil::formatBalance(newBalance.balance, nDisplayUnit);
+    // RPI Total
+    QString totalRpi = GUIUtil::formatBalance(newBalance.balance, nDisplayUnit);
 
-    // PIV
+    // RPI
     // Top
-    ui->labelAmountTopPiv->setText(totalPiv);
+    ui->labelAmountTopRpi->setText(totalRpi);
     // Expanded
-    ui->labelAmountPiv->setText(totalPiv);
-    ui->labelPendingPiv->setText(GUIUtil::formatBalance(newBalance.unconfirmed_balance, nDisplayUnit));
-    ui->labelImmaturePiv->setText(GUIUtil::formatBalance(newBalance.immature_balance, nDisplayUnit));
+    ui->labelAmountRpi->setText(totalRpi);
+    ui->labelPendingRpi->setText(GUIUtil::formatBalance(newBalance.unconfirmed_balance, nDisplayUnit));
+    ui->labelImmatureRpi->setText(GUIUtil::formatBalance(newBalance.immature_balance, nDisplayUnit));
 }
 
 void TopBar::resizeEvent(QResizeEvent *event)

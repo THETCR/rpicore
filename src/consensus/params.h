@@ -153,8 +153,8 @@ struct Params {
     int nFakeSerialBlockheightEnd = 0;
     CAmount nSupplyBeforeFakeSerial = 0;
 
-    int64_t nPivxBadBlockTime;
-    unsigned int nPivxBadBlocknBits;
+    int64_t nRpicoinBadBlockTime;
+    unsigned int nRpicoinBadBlocknBits;
     int nStakeMinAge;
     int nStakeMinAgeV2;
     //new
@@ -194,8 +194,8 @@ struct Params {
     int height_ZC_RecalcAccumulators;
 
     // validation by-pass
-    int64_t nPivxBadBlockTime;
-    unsigned int nPivxBadBlockBits;
+    int64_t nRpicoinBadBlockTime;
+    unsigned int nRpicoinBadBlockBits;
 
     // Map with network updates
     NetworkUpgrade vUpgrades[MAX_NETWORK_UPGRADES];

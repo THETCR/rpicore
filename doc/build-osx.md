@@ -83,17 +83,17 @@ RPICOIN Core is now available at `./src/rpicoind`
 
 Before running, you may create an empty configuration file:
 
-    mkdir -p "/Users/${USER}/Library/Application Support/PIVX"
+    mkdir -p "/Users/${USER}/Library/Application Support/RPICOIN"
 
-    touch "/Users/${USER}/Library/Application Support/PIVX/rpicoin.conf"
+    touch "/Users/${USER}/Library/Application Support/RPICOIN/rpicoin.conf"
 
-    chmod 600 "/Users/${USER}/Library/Application Support/PIVX/rpicoin.conf"
+    chmod 600 "/Users/${USER}/Library/Application Support/RPICOIN/rpicoin.conf"
 
 The first time you run rpicoind, it will start downloading the blockchain. This process could take many hours, or even days on slower than average systems.
 
 You can monitor the download process by looking at the debug.log file:
 
-    tail -f $HOME/Library/Application\ Support/PIVX/debug.log
+    tail -f $HOME/Library/Application\ Support/RPICOIN/debug.log
 
 Other commands:
 -------

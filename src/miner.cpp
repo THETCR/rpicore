@@ -110,7 +110,7 @@ void UpdateTime(CBlockHeader* pblock, const CBlockIndex* pindexPrev)
 bool CheckForDuplicatedSerials(const CTransaction& tx, const Consensus::Params& consensus,
                                std::vector<CBigNum>& vBlockSerials)
 {
-    // double check that there are no double spent zPIV spends in this block or tx
+    // double check that there are no double spent zRPI spends in this block or tx
     if (tx.HasZerocoinSpendInputs()) {
         int nHeightTx = 0;
         if (IsTransactionInChain(tx.GetHash(), nHeightTx)) {
@@ -126,7 +126,7 @@ bool CheckForDuplicatedSerials(const CTransaction& tx, const Consensus::Params& 
                     libzerocoin::ZerocoinParams* params = consensus.Zerocoin_Params(false);
                     PublicCoinSpend publicSpend(params);
                     CValidationState state;
-                    if (!ZPIVModule::ParseZerocoinPublicSpend(txIn, tx, state, publicSpend)){
+                    if (!ZRPIModule::ParseZerocoinPublicSpend(txIn, tx, state, publicSpend)){
                         throw std::runtime_error("Invalid public spend parse");
                     }
                     spend = &publicSpend;
@@ -145,7 +145,7 @@ bool CheckForDuplicatedSerials(const CTransaction& tx, const Consensus::Params& 
                 vBlockSerials.emplace_back(spend->getCoinSerialNumber());
             }
         }
-        //This zPIV serial has already been included in the block, do not add this tx.
+        //This zRPI serial has already been included in the block, do not add this tx.
         if (fDoubleSerial) {
             return false;
         }
@@ -384,7 +384,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
             if (!view.HaveInputs(tx))
                 continue;
 
-            // zPIV check to not include duplicated serials in the same block.
+            // zRPI check to not include duplicated serials in the same block.
             if (!CheckForDuplicatedSerials(tx, consensus, vBlockSerials)) {
                 continue;
             }
@@ -533,7 +533,7 @@ bool ProcessBlockFound(CBlock* pblock, CWallet& wallet, Optional<CReserveKey>& r
     {
         WAIT_LOCK(g_best_block_mutex, lock);
         if (pblock->hashPrevBlock != g_best_block)
-            return error("PIVXMiner : generated block is stale");
+            return error("RPICOINMiner : generated block is stale");
     }
 
     // Remove key from key pool
@@ -546,7 +546,7 @@ bool ProcessBlockFound(CBlock* pblock, CWallet& wallet, Optional<CReserveKey>& r
     // Process this block the same as if we had received it from another node
     CValidationState state;
     if (!ProcessNewBlock(state, nullptr, pblock, nullptr, g_connman.get())) {
-        return error("PIVXMiner : ProcessNewBlock, block not accepted");
+        return error("RPICOINMiner : ProcessNewBlock, block not accepted");
     }
 
     g_connman->ForEachNode([&pblock](CNode* node)
@@ -575,7 +575,7 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
 {
     LogPrintf("RPICOINMiner started\n");
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
-    util::ThreadRename("pivx-miner");
+    util::ThreadRename("rpicoin-miner");
     const Consensus::Params& consensus = Params().GetConsensus();
     const int64_t nSpacingMillis = consensus.nTargetSpacing * 1000;
 
@@ -652,7 +652,7 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
         // POW - miner main
         IncrementExtraNonce(pblock, pindexPrev, nExtraNonce);
 
-        LogPrintf("Running PIVXMiner with %u transactions in block (%u bytes)\n", pblock->vtx.size(),
+        LogPrintf("Running RPICOINMiner with %u transactions in block (%u bytes)\n", pblock->vtx.size(),
             ::GetSerializeSize(*pblock, SER_NETWORK, PROTOCOL_VERSION));
 
         //
@@ -741,12 +741,12 @@ void static ThreadBitcoinMiner(void* parg)
         BitcoinMiner(pwallet, false);
         boost::this_thread::interruption_point();
     } catch (const std::exception& e) {
-        LogPrintf("PIVXMiner exception");
+        LogPrintf("RPICOINMiner exception");
     } catch (...) {
-        LogPrintf("PIVXMiner exception");
+        LogPrintf("RPICOINMiner exception");
     }
 
-    LogPrintf("PIVXMiner exiting\n");
+    LogPrintf("RPICOINMiner exiting\n");
 }
 
 void GenerateBitcoins(bool fGenerate, CWallet* pwallet, int nThreads)

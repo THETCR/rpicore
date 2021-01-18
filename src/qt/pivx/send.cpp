@@ -2,15 +2,15 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "qt/pivx/send.h"
-#include "qt/pivx/forms/ui_send.h"
-#include "qt/pivx/addnewcontactdialog.h"
-#include "qt/pivx/qtutils.h"
-#include "qt/pivx/sendchangeaddressdialog.h"
-#include "qt/pivx/optionbutton.h"
-#include "qt/pivx/sendconfirmdialog.h"
-#include "qt/pivx/myaddressrow.h"
-#include "qt/pivx/guitransactionsutils.h"
+#include "qt/rpicoin/send.h"
+#include "qt/rpicoin/forms/ui_send.h"
+#include "qt/rpicoin/addnewcontactdialog.h"
+#include "qt/rpicoin/qtutils.h"
+#include "qt/rpicoin/sendchangeaddressdialog.h"
+#include "qt/rpicoin/optionbutton.h"
+#include "qt/rpicoin/sendconfirmdialog.h"
+#include "qt/rpicoin/myaddressrow.h"
+#include "qt/rpicoin/guitransactionsutils.h"
 #include "clientmodel.h"
 #include "optionsmodel.h"
 #include "addresstablemodel.h"
@@ -18,7 +18,7 @@
 #include "script/standard.h"
 #include "openuridialog.h"
 
-SendWidget::SendWidget(PIVXGUI* parent) :
+SendWidget::SendWidget(RPICOINGUI* parent) :
     PWidget(parent),
     ui(new Ui::send),
     coinIcon(new QPushButton()),
@@ -91,7 +91,7 @@ SendWidget::SendWidget(PIVXGUI* parent) :
     coinIcon->show();
     coinIcon->raise();
 
-    setCssProperty(coinIcon, "coin-icon-piv");
+    setCssProperty(coinIcon, "coin-icon-rpi");
 
     QSize BUTTON_SIZE = QSize(24, 24);
     coinIcon->setMinimumSize(BUTTON_SIZE);
@@ -648,8 +648,8 @@ void SendWidget::onContactMultiClicked()
             inform(tr("Invalid address"));
             return;
         }
-        CTxDestination pivAdd = DecodeDestination(address.toStdString());
-        if (walletModel->isMine(pivAdd)) {
+        CTxDestination rpiAdd = DecodeDestination(address.toStdString());
+        if (walletModel->isMine(rpiAdd)) {
             inform(tr("Cannot store your own address as contact"));
             return;
         }
@@ -669,7 +669,7 @@ void SendWidget::onContactMultiClicked()
             if (label == dialog->getLabel()) {
                 return;
             }
-            if (walletModel->updateAddressBookLabels(pivAdd, dialog->getLabel().toStdString(),
+            if (walletModel->updateAddressBookLabels(rpiAdd, dialog->getLabel().toStdString(),
                     AddressBook::AddressBookPurpose::SEND)) {
                 inform(tr("New Contact Stored"));
             } else {

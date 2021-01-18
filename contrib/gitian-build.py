@@ -204,10 +204,10 @@ def sign():
     if args.commit_files:
         os.chdir('gitian.sigs')
         commit = False
-        if os.path.isfile(args.version+'-win-signed/'+args.signer+'/pivx-win-signer-build.assert.sig'):
+        if os.path.isfile(args.version+'-win-signed/'+args.signer+'/rpicoin-win-signer-build.assert.sig'):
             subprocess.check_call(['git', 'add', args.version+'-win-signed/'+args.signer])
             commit = True
-        if os.path.isfile(args.version+'-osx-signed/'+args.signer+'/pivx-dmg-signer-build.assert.sig'):
+        if os.path.isfile(args.version+'-osx-signed/'+args.signer+'/rpicoin-dmg-signer-build.assert.sig'):
             subprocess.check_call(['git', 'add', args.version+'-osx-signed/'+args.signer])
             commit = True
         if commit:

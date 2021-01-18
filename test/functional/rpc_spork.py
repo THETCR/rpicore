@@ -10,7 +10,7 @@ from test_framework.test_framework import RpicoinTestFramework
 from test_framework.util import set_node_times, assert_equal
 
 
-class PIVX_RPCSporkTest(RpicoinTestFramework):
+class RPICOIN_RPCSporkTest(RpicoinTestFramework):
 
     def set_test_params(self):
         self.setup_clean_chain = True
@@ -70,5 +70,5 @@ class PIVX_RPCSporkTest(RpicoinTestFramework):
 
 
 if __name__ == '__main__':
-    PIVX_RPCSporkTest().main()
+    RPICOIN_RPCSporkTest().main()
 

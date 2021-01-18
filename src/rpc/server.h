@@ -128,7 +128,7 @@ public:
 };
 
 /**
- * PIVX RPC command dispatcher.
+ * RPICOIN RPC command dispatcher.
  */
 class CRPCTable
 {
@@ -188,7 +188,7 @@ extern std::string HelpExampleRpc(std::string methodname, std::string args);
 extern void EnsureWalletIsUnlocked(bool fAllowAnonOnly = false);
 // Ensure the wallet's existence.
 extern void EnsureWallet();
-extern UniValue DoZpivSpend(const CAmount nAmount, std::vector<CZerocoinMint>& vMintsSelected, std::string address_str);
+extern UniValue DoZrpiSpend(const CAmount nAmount, std::vector<CZerocoinMint>& vMintsSelected, std::string address_str);
 
 extern UniValue getconnectioncount(const JSONRPCRequest& request); // in rpc/net.cpp
 extern UniValue getpeerinfo(const JSONRPCRequest& request);
@@ -234,11 +234,11 @@ extern UniValue importzerocoins(const JSONRPCRequest& request);
 extern UniValue exportzerocoins(const JSONRPCRequest& request);
 extern UniValue reconsiderzerocoins(const JSONRPCRequest& request);
 extern UniValue getspentzerocoinamount(const JSONRPCRequest& request);
-extern UniValue setzpivseed(const JSONRPCRequest& request);
-extern UniValue getzpivseed(const JSONRPCRequest& request);
+extern UniValue setzrpiseed(const JSONRPCRequest& request);
+extern UniValue getzrpiseed(const JSONRPCRequest& request);
 extern UniValue generatemintlist(const JSONRPCRequest& request);
-extern UniValue searchdzpiv(const JSONRPCRequest& request);
-extern UniValue dzpivstate(const JSONRPCRequest& request);
+extern UniValue searchdzrpi(const JSONRPCRequest& request);
+extern UniValue dzrpistate(const JSONRPCRequest& request);
 
 extern UniValue getrawtransaction(const JSONRPCRequest& request); // in rpc/rawtransaction.cpp
 extern UniValue createrawtransaction(const JSONRPCRequest& request);

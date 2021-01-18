@@ -8,17 +8,17 @@
 #include <QWidget>
 #include <QPushButton>
 
-#include "qt/pivx/pwidget.h"
-#include "qt/pivx/contactsdropdown.h"
-#include "qt/pivx/sendmultirow.h"
-#include "qt/pivx/sendcustomfeedialog.h"
+#include "qt/rpicoin/pwidget.h"
+#include "qt/rpicoin/contactsdropdown.h"
+#include "qt/rpicoin/sendmultirow.h"
+#include "qt/rpicoin/sendcustomfeedialog.h"
 #include "walletmodel.h"
 #include "coincontroldialog.h"
-#include "qt/pivx/tooltipmenu.h"
+#include "qt/rpicoin/tooltipmenu.h"
 
 static const int MAX_SEND_POPUP_ENTRIES = 8;
 
-class PIVXGUI;
+class RPICOINGUI;
 class ClientModel;
 class WalletModel;
 class WalletModelTransaction;
@@ -33,7 +33,7 @@ class SendWidget : public PWidget
     Q_OBJECT
 
 public:
-    explicit SendWidget(PIVXGUI* parent);
+    explicit SendWidget(RPICOINGUI* parent);
     ~SendWidget();
 
     void addEntry();

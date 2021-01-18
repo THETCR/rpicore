@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIVX_ZPIVCHAIN_H
-#define PIVX_ZPIVCHAIN_H
+#ifndef RPICOIN_ZRPICHAIN_H
+#define RPICOIN_ZRPICHAIN_H
 
 #include "chain.h"
 #include "libzerocoin/Coin.h"
@@ -41,7 +41,7 @@ std::list<libzerocoin::CoinDenomination> ZerocoinSpendListFromBlock(const CBlock
 /** Global variable for the zerocoin supply */
 extern std::map<libzerocoin::CoinDenomination, int64_t> mapZerocoinSupply;
 int64_t GetZerocoinSupply();
-bool UpdateZPIVSupplyConnect(const CBlock& block, CBlockIndex* pindex, bool fJustCheck);
-bool UpdateZPIVSupplyDisconnect(const CBlock& block, CBlockIndex* pindex);
+bool UpdateZRPISupplyConnect(const CBlock& block, CBlockIndex* pindex, bool fJustCheck);
+bool UpdateZRPISupplyDisconnect(const CBlock& block, CBlockIndex* pindex);
 
-#endif //PIVX_ZPIVCHAIN_H
+#endif //RPICOIN_ZRPICHAIN_H

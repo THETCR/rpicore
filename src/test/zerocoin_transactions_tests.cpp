@@ -242,7 +242,7 @@ BOOST_AUTO_TEST_CASE(zerocoin_public_spend_test)
     std::cout << "Spend v3 size: " << ::GetSerializeSize(in1, SER_NETWORK, PROTOCOL_VERSION) << " bytes" << std::endl;
 
     PublicCoinSpend publicSpend1(ZCParams_v2);
-    BOOST_CHECK_MESSAGE(ZPIVModule::validateInput(in1, out_v2, tx1, publicSpend1),
+    BOOST_CHECK_MESSAGE(ZRPIModule::validateInput(in1, out_v2, tx1, publicSpend1),
             "Failed to validate zc input for mint v2 and spendVersion 3");
 
     // Verify that it fails with a different denomination

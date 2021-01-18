@@ -311,7 +311,7 @@ def main():
               args.keepcache)
 
 def run_tests(test_list, src_dir, build_dir, exeext, tmpdir, jobs=1, enable_coverage=False, args=[], combined_logs_len=0, keep_cache=False):
-    # Warn if pivxd is already running (unix only)
+    # Warn if rpicoind is already running (unix only)
     try:
         if subprocess.check_output(["pidof", "rpicoind"]) is not None:
             print("%sWARNING!%s There is already a rpicoind process running on this system. Tests may fail unexpectedly due to resource contention!" % (BOLD[1], BOLD[0]))

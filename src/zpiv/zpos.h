@@ -2,14 +2,14 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIVX_LEGACY_ZPOS_H
-#define PIVX_LEGACY_ZPOS_H
+#ifndef RPICOIN_LEGACY_ZPOS_H
+#define RPICOIN_LEGACY_ZPOS_H
 
 #include "stakeinput.h"
 #include "main.h"
 #include "txdb.h"
 
-class CLegacyZPivStake : public CStakeInput
+class CLegacyZRpiStake : public CStakeInput
 {
 private:
     uint32_t nChecksum;
@@ -17,11 +17,11 @@ private:
     uint256 hashSerial;
 
 public:
-    CLegacyZPivStake() {}
+    CLegacyZRpiStake() {}
 
-    explicit CLegacyZPivStake(const libzerocoin::CoinSpend& spend);
+    explicit CLegacyZRpiStake(const libzerocoin::CoinSpend& spend);
     bool InitFromTxIn(const CTxIn& txin) override;
-    bool IsZPIV() const override { return true; }
+    bool IsZRPI() const override { return true; }
     uint32_t GetChecksum() const { return nChecksum; }
     CBlockIndex* GetIndexFrom() override;
     CAmount GetValue() const override;
@@ -33,4 +33,4 @@ public:
     virtual bool ContextCheck(int nHeight, uint32_t nTime) override;
 };
 
-#endif //PIVX_LEGACY_ZPOS_H
+#endif //RPICOIN_LEGACY_ZPOS_H

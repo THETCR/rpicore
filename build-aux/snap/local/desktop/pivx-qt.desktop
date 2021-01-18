@@ -2,14 +2,14 @@
 
 [Desktop Entry]
 Encoding=UTF-8
-Name=PIVX Core
-Comment=PIVX Core QT main network
-GenericName=PIVX Digital Currency QT client main network
-Exec=pivx-core.qt %u
+Name=RPICOIN Core
+Comment=RPICOIN Core QT main network
+GenericName=RPICOIN Digital Currency QT client main network
+Exec=rpicoin-core.qt %u
 Terminal=false
 Type=Application
-Icon=${SNAP}/share/pixmaps/pivx.png
-MimeType=x-scheme-handler/pivx;
+Icon=${SNAP}/share/pixmaps/rpicoin.png
+MimeType=x-scheme-handler/rpicoin;
 Categories=X-Office;X-Finance;
-Keywords=internet;pivx;zpiv;piv;core;wallet;qt;main;snap;launchpad;crypto;digital;currency;coin;token;zerocoin;
+Keywords=internet;rpicoin;zrpi;rpi;core;wallet;qt;main;snap;launchpad;crypto;digital;currency;coin;token;zerocoin;
 Version=1.0

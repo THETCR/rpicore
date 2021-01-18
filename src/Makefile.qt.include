@@ -5,7 +5,7 @@
 bin_PROGRAMS += qt/rpicoin-qt
 EXTRA_LIBRARIES += qt/libbitcoinqt.a
 
-# pivx qt core #
+# rpicoin qt core #
 include Makefile.qt_locale.include
 
 QT_FORMS_UI = \
@@ -18,54 +18,54 @@ QT_FORMS_UI = \
   qt/forms/openuridialog.ui \
   qt/forms/optionsdialog.ui \
   qt/forms/rpcconsole.ui \
-  qt/pivx/forms/loadingdialog.ui \
-  qt/pivx/forms/snackbar.ui \
-  qt/pivx/forms/navmenuwidget.ui \
-  qt/pivx/forms/lockunlock.ui \
-  qt/pivx/forms/expandablebutton.ui \
-  qt/pivx/forms/receivedialog.ui \
-  qt/pivx/forms/topbar.ui \
-  qt/pivx/forms/txrow.ui \
-  qt/pivx/forms/dashboardwidget.ui \
-  qt/pivx/forms/addresslabelrow.ui \
-  qt/pivx/forms/contactdropdownrow.ui \
-  qt/pivx/forms/mninfodialog.ui \
-  qt/pivx/forms/optionbutton.ui \
-  qt/pivx/forms/masternodewizarddialog.ui \
-  qt/pivx/forms/mnrow.ui \
-  qt/pivx/forms/masternodeswidget.ui \
-  qt/pivx/forms/myaddressrow.ui \
-  qt/pivx/forms/csrow.ui \
-  qt/pivx/forms/sendchangeaddressdialog.ui \
-  qt/pivx/forms/sendconfirmdialog.ui \
-  qt/pivx/forms/sendcustomfeedialog.ui \
-  qt/pivx/forms/sendchangeaddressdialog.ui \
-  qt/pivx/forms/sendmultirow.ui \
-  qt/pivx/forms/send.ui \
-  qt/pivx/forms/addnewaddressdialog.ui \
-  qt/pivx/forms/addnewcontactdialog.ui \
-  qt/pivx/forms/requestdialog.ui \
-  qt/pivx/forms/receivewidget.ui \
-  qt/pivx/forms/tooltipmenu.ui \
-  qt/pivx/forms/addresseswidget.ui \
-  qt/pivx/forms/defaultdialog.ui \
-  qt/pivx/forms/coldstakingwidget.ui \
-  qt/pivx/settings/forms/settingsbackupwallet.ui \
-  qt/pivx/settings/forms/settingsexportcsv.ui \
-  qt/pivx/settings/forms/settingsbittoolwidget.ui \
-  qt/pivx/settings/forms/settingsconsolewidget.ui \
-  qt/pivx/settings/forms/settingsdisplayoptionswidget.ui \
-  qt/pivx/settings/forms/settingsfaqwidget.ui \
-  qt/pivx/settings/forms/settingsinformationwidget.ui \
-  qt/pivx/settings/forms/settingsmainoptionswidget.ui \
-  qt/pivx/settings/forms/settingsmultisenddialog.ui \
-  qt/pivx/settings/forms/settingsmultisendwidget.ui \
-  qt/pivx/settings/forms/settingssignmessagewidgets.ui \
-  qt/pivx/settings/forms/settingswalletoptionswidget.ui \
-  qt/pivx/settings/forms/settingswalletrepairwidget.ui \
-  qt/pivx/settings/forms/settingswidget.ui \
-  qt/pivx/forms/welcomecontentwidget.ui \
-  qt/pivx/forms/splash.ui
+  qt/rpicoin/forms/loadingdialog.ui \
+  qt/rpicoin/forms/snackbar.ui \
+  qt/rpicoin/forms/navmenuwidget.ui \
+  qt/rpicoin/forms/lockunlock.ui \
+  qt/rpicoin/forms/expandablebutton.ui \
+  qt/rpicoin/forms/receivedialog.ui \
+  qt/rpicoin/forms/topbar.ui \
+  qt/rpicoin/forms/txrow.ui \
+  qt/rpicoin/forms/dashboardwidget.ui \
+  qt/rpicoin/forms/addresslabelrow.ui \
+  qt/rpicoin/forms/contactdropdownrow.ui \
+  qt/rpicoin/forms/mninfodialog.ui \
+  qt/rpicoin/forms/optionbutton.ui \
+  qt/rpicoin/forms/masternodewizarddialog.ui \
+  qt/rpicoin/forms/mnrow.ui \
+  qt/rpicoin/forms/masternodeswidget.ui \
+  qt/rpicoin/forms/myaddressrow.ui \
+  qt/rpicoin/forms/csrow.ui \
+  qt/rpicoin/forms/sendchangeaddressdialog.ui \
+  qt/rpicoin/forms/sendconfirmdialog.ui \
+  qt/rpicoin/forms/sendcustomfeedialog.ui \
+  qt/rpicoin/forms/sendchangeaddressdialog.ui \
+  qt/rpicoin/forms/sendmultirow.ui \
+  qt/rpicoin/forms/send.ui \
+  qt/rpicoin/forms/addnewaddressdialog.ui \
+  qt/rpicoin/forms/addnewcontactdialog.ui \
+  qt/rpicoin/forms/requestdialog.ui \
+  qt/rpicoin/forms/receivewidget.ui \
+  qt/rpicoin/forms/tooltipmenu.ui \
+  qt/rpicoin/forms/addresseswidget.ui \
+  qt/rpicoin/forms/defaultdialog.ui \
+  qt/rpicoin/forms/coldstakingwidget.ui \
+  qt/rpicoin/settings/forms/settingsbackupwallet.ui \
+  qt/rpicoin/settings/forms/settingsexportcsv.ui \
+  qt/rpicoin/settings/forms/settingsbittoolwidget.ui \
+  qt/rpicoin/settings/forms/settingsconsolewidget.ui \
+  qt/rpicoin/settings/forms/settingsdisplayoptionswidget.ui \
+  qt/rpicoin/settings/forms/settingsfaqwidget.ui \
+  qt/rpicoin/settings/forms/settingsinformationwidget.ui \
+  qt/rpicoin/settings/forms/settingsmainoptionswidget.ui \
+  qt/rpicoin/settings/forms/settingsmultisenddialog.ui \
+  qt/rpicoin/settings/forms/settingsmultisendwidget.ui \
+  qt/rpicoin/settings/forms/settingssignmessagewidgets.ui \
+  qt/rpicoin/settings/forms/settingswalletoptionswidget.ui \
+  qt/rpicoin/settings/forms/settingswalletrepairwidget.ui \
+  qt/rpicoin/settings/forms/settingswidget.ui \
+  qt/rpicoin/forms/welcomecontentwidget.ui \
+  qt/rpicoin/forms/splash.ui
 
 QT_MOC_CPP = \
   qt/moc_addressbookpage.cpp \
@@ -73,7 +73,7 @@ QT_MOC_CPP = \
   qt/moc_askpassphrasedialog.cpp \
   qt/moc_bantablemodel.cpp \
   qt/moc_bitcoinaddressvalidator.cpp \
-  qt/pivx/moc_pivxgui.cpp \
+  qt/rpicoin/moc_rpicoingui.cpp \
   qt/moc_bitcoinunits.cpp \
   qt/moc_clientmodel.cpp \
   qt/moc_coincontroldialog.cpp \
@@ -99,71 +99,71 @@ QT_MOC_CPP = \
   qt/moc_transactiontablemodel.cpp \
   qt/moc_utilitydialog.cpp \
   qt/moc_walletmodel.cpp \
-  qt/pivx/moc_loadingdialog.cpp \
-  qt/pivx/moc_pwidget.cpp \
-  qt/pivx/moc_focuseddialog.cpp \
-  qt/pivx/moc_snackbar.cpp \
-  qt/pivx/moc_navmenuwidget.cpp \
-  qt/pivx/moc_lockunlock.cpp \
-  qt/pivx/moc_expandablebutton.cpp \
-  qt/pivx/moc_furabstractlistitemdelegate.cpp \
-  qt/pivx/moc_receivedialog.cpp \
-  qt/pivx/moc_pfborderimage.cpp \
-  qt/pivx/moc_topbar.cpp \
-  qt/pivx/moc_txrow.cpp \
-  qt/pivx/moc_dashboardwidget.cpp \
-  qt/pivx/moc_addresslabelrow.cpp \
-  qt/pivx/moc_contactdropdownrow.cpp \
-  qt/pivx/moc_mninfodialog.cpp \
-  qt/pivx/moc_optionbutton.cpp \
-  qt/pivx/moc_coldstakingmodel.cpp \
-  qt/pivx/moc_mnmodel.cpp \
-  qt/pivx/moc_masternodewizarddialog.cpp \
-  qt/pivx/moc_mnrow.cpp \
-  qt/pivx/moc_masternodeswidget.cpp \
-  qt/pivx/moc_myaddressrow.cpp \
-  qt/pivx/moc_csrow.cpp \
-  qt/pivx/moc_contactsdropdown.cpp \
-  qt/pivx/moc_sendchangeaddressdialog.cpp \
-  qt/pivx/moc_sendconfirmdialog.cpp \
-  qt/pivx/moc_sendcustomfeedialog.cpp \
-  qt/pivx/moc_sendchangeaddressdialog.cpp \
-  qt/pivx/moc_sendmultirow.cpp \
-  qt/pivx/moc_send.cpp \
-  qt/pivx/moc_addnewaddressdialog.cpp \
-  qt/pivx/moc_addnewcontactdialog.cpp \
-  qt/pivx/moc_requestdialog.cpp \
-  qt/pivx/moc_receivewidget.cpp \
-  qt/pivx/moc_tooltipmenu.cpp \
-  qt/pivx/moc_addresseswidget.cpp \
-  qt/pivx/moc_defaultdialog.cpp \
-  qt/pivx/moc_coldstakingwidget.cpp \
-  qt/pivx/settings/moc_settingsbackupwallet.cpp \
-  qt/pivx/settings/moc_settingsexportcsv.cpp \
-  qt/pivx/settings/moc_settingsbittoolwidget.cpp \
-  qt/pivx/settings/moc_settingsconsolewidget.cpp \
-  qt/pivx/settings/moc_settingsdisplayoptionswidget.cpp \
-  qt/pivx/settings/moc_settingsfaqwidget.cpp \
-  qt/pivx/settings/moc_settingsinformationwidget.cpp \
-  qt/pivx/settings/moc_settingsmainoptionswidget.cpp \
-  qt/pivx/settings/moc_settingsmultisenddialog.cpp \
-  qt/pivx/settings/moc_settingsmultisendwidget.cpp \
-  qt/pivx/settings/moc_settingssignmessagewidgets.cpp \
-  qt/pivx/settings/moc_settingswalletoptionswidget.cpp \
-  qt/pivx/settings/moc_settingswalletrepairwidget.cpp \
-  qt/pivx/settings/moc_settingswidget.cpp \
-  qt/pivx/moc_welcomecontentwidget.cpp \
-  qt/pivx/moc_splash.cpp
+  qt/rpicoin/moc_loadingdialog.cpp \
+  qt/rpicoin/moc_pwidget.cpp \
+  qt/rpicoin/moc_focuseddialog.cpp \
+  qt/rpicoin/moc_snackbar.cpp \
+  qt/rpicoin/moc_navmenuwidget.cpp \
+  qt/rpicoin/moc_lockunlock.cpp \
+  qt/rpicoin/moc_expandablebutton.cpp \
+  qt/rpicoin/moc_furabstractlistitemdelegate.cpp \
+  qt/rpicoin/moc_receivedialog.cpp \
+  qt/rpicoin/moc_pfborderimage.cpp \
+  qt/rpicoin/moc_topbar.cpp \
+  qt/rpicoin/moc_txrow.cpp \
+  qt/rpicoin/moc_dashboardwidget.cpp \
+  qt/rpicoin/moc_addresslabelrow.cpp \
+  qt/rpicoin/moc_contactdropdownrow.cpp \
+  qt/rpicoin/moc_mninfodialog.cpp \
+  qt/rpicoin/moc_optionbutton.cpp \
+  qt/rpicoin/moc_coldstakingmodel.cpp \
+  qt/rpicoin/moc_mnmodel.cpp \
+  qt/rpicoin/moc_masternodewizarddialog.cpp \
+  qt/rpicoin/moc_mnrow.cpp \
+  qt/rpicoin/moc_masternodeswidget.cpp \
+  qt/rpicoin/moc_myaddressrow.cpp \
+  qt/rpicoin/moc_csrow.cpp \
+  qt/rpicoin/moc_contactsdropdown.cpp \
+  qt/rpicoin/moc_sendchangeaddressdialog.cpp \
+  qt/rpicoin/moc_sendconfirmdialog.cpp \
+  qt/rpicoin/moc_sendcustomfeedialog.cpp \
+  qt/rpicoin/moc_sendchangeaddressdialog.cpp \
+  qt/rpicoin/moc_sendmultirow.cpp \
+  qt/rpicoin/moc_send.cpp \
+  qt/rpicoin/moc_addnewaddressdialog.cpp \
+  qt/rpicoin/moc_addnewcontactdialog.cpp \
+  qt/rpicoin/moc_requestdialog.cpp \
+  qt/rpicoin/moc_receivewidget.cpp \
+  qt/rpicoin/moc_tooltipmenu.cpp \
+  qt/rpicoin/moc_addresseswidget.cpp \
+  qt/rpicoin/moc_defaultdialog.cpp \
+  qt/rpicoin/moc_coldstakingwidget.cpp \
+  qt/rpicoin/settings/moc_settingsbackupwallet.cpp \
+  qt/rpicoin/settings/moc_settingsexportcsv.cpp \
+  qt/rpicoin/settings/moc_settingsbittoolwidget.cpp \
+  qt/rpicoin/settings/moc_settingsconsolewidget.cpp \
+  qt/rpicoin/settings/moc_settingsdisplayoptionswidget.cpp \
+  qt/rpicoin/settings/moc_settingsfaqwidget.cpp \
+  qt/rpicoin/settings/moc_settingsinformationwidget.cpp \
+  qt/rpicoin/settings/moc_settingsmainoptionswidget.cpp \
+  qt/rpicoin/settings/moc_settingsmultisenddialog.cpp \
+  qt/rpicoin/settings/moc_settingsmultisendwidget.cpp \
+  qt/rpicoin/settings/moc_settingssignmessagewidgets.cpp \
+  qt/rpicoin/settings/moc_settingswalletoptionswidget.cpp \
+  qt/rpicoin/settings/moc_settingswalletrepairwidget.cpp \
+  qt/rpicoin/settings/moc_settingswidget.cpp \
+  qt/rpicoin/moc_welcomecontentwidget.cpp \
+  qt/rpicoin/moc_splash.cpp
 
 BITCOIN_MM = \
   qt/macdockiconhandler.mm \
   qt/macnotificationhandler.mm
 
 QT_MOC = \
-  qt/pivx.moc \
+  qt/rpicoin.moc \
   qt/intro.moc \
   qt/rpcconsole.moc \
-  qt/pivx/settings/moc_settingsconsolewidget.cpp
+  qt/rpicoin/settings/moc_settingsconsolewidget.cpp
 
 QT_QRC_CPP = qt/qrc_rpicoin.cpp
 QT_QRC = qt/rpicoin.qrc
@@ -180,7 +180,7 @@ BITCOIN_QT_H = \
   qt/askpassphrasedialog.h \
   qt/bantablemodel.h \
   qt/bitcoinaddressvalidator.h \
-  qt/pivx/pivxgui.h \
+  qt/rpicoin/rpicoingui.h \
   qt/bitcoinunits.h \
   qt/clientmodel.h \
   qt/coincontroldialog.h \
@@ -212,69 +212,69 @@ BITCOIN_QT_H = \
   qt/utilitydialog.h \
   qt/walletmodel.h \
   qt/walletmodeltransaction.h \
-  qt/pivx/prunnable.h \
-  qt/pivx/pfborderimage.h \
-  qt/pivx/loadingdialog.h \
+  qt/rpicoin/prunnable.h \
+  qt/rpicoin/pfborderimage.h \
+  qt/rpicoin/loadingdialog.h \
   qt/winshutdownmonitor.h \
-  qt/pivx/pwidget.h \
-  qt/pivx/focuseddialog.h \
-  qt/pivx/guitransactionsutils.h \
-  qt/pivx/snackbar.h \
-  qt/pivx/navmenuwidget.h \
-  qt/pivx/lockunlock.h \
-  qt/pivx/receivedialog.h \
-  qt/pivx/furlistrow.h \
-  qt/pivx/furabstractlistitemdelegate.h \
-  qt/pivx/txviewholder.h \
-  qt/pivx/qtutils.h \
-  qt/pivx/expandablebutton.h \
-  qt/pivx/topbar.h \
-  qt/pivx/txrow.h \
-  qt/pivx/addressholder.h \
-  qt/pivx/addressfilterproxymodel.h \
-  qt/pivx/dashboardwidget.h \
-  qt/pivx/addresslabelrow.h \
-  qt/pivx/contactdropdownrow.h \
-  qt/pivx/mninfodialog.h \
-  qt/pivx/optionbutton.h \
-  qt/pivx/coldstakingmodel.h \
-  qt/pivx/mnmodel.h \
-  qt/pivx/masternodewizarddialog.h \
-  qt/pivx/mnrow.h \
-  qt/pivx/masternodeswidget.h \
-  qt/pivx/myaddressrow.h \
-  qt/pivx/csrow.h \
-  qt/pivx/contactsdropdown.h \
-  qt/pivx/sendchangeaddressdialog.h \
-  qt/pivx/sendconfirmdialog.h \
-  qt/pivx/sendcustomfeedialog.h \
-  qt/pivx/sendchangeaddressdialog.h \
-  qt/pivx/sendmultirow.h \
-  qt/pivx/send.h \
-  qt/pivx/addnewaddressdialog.h \
-  qt/pivx/addnewcontactdialog.h \
-  qt/pivx/requestdialog.h \
-  qt/pivx/receivewidget.h \
-  qt/pivx/tooltipmenu.h \
-  qt/pivx/addresseswidget.h \
-  qt/pivx/defaultdialog.h \
-  qt/pivx/coldstakingwidget.h \
-  qt/pivx/settings/settingsbackupwallet.h \
-  qt/pivx/settings/settingsexportcsv.h \
-  qt/pivx/settings/settingsbittoolwidget.h \
-  qt/pivx/settings/settingsconsolewidget.h \
-  qt/pivx/settings/settingsdisplayoptionswidget.h \
-  qt/pivx/settings/settingsfaqwidget.h \
-  qt/pivx/settings/settingsinformationwidget.h \
-  qt/pivx/settings/settingsmainoptionswidget.h \
-  qt/pivx/settings/settingsmultisenddialog.h \
-  qt/pivx/settings/settingsmultisendwidget.h \
-  qt/pivx/settings/settingssignmessagewidgets.h \
-  qt/pivx/settings/settingswalletoptionswidget.h \
-  qt/pivx/settings/settingswalletrepairwidget.h \
-  qt/pivx/settings/settingswidget.h \
-  qt/pivx/welcomecontentwidget.h \
-  qt/pivx/splash.h
+  qt/rpicoin/pwidget.h \
+  qt/rpicoin/focuseddialog.h \
+  qt/rpicoin/guitransactionsutils.h \
+  qt/rpicoin/snackbar.h \
+  qt/rpicoin/navmenuwidget.h \
+  qt/rpicoin/lockunlock.h \
+  qt/rpicoin/receivedialog.h \
+  qt/rpicoin/furlistrow.h \
+  qt/rpicoin/furabstractlistitemdelegate.h \
+  qt/rpicoin/txviewholder.h \
+  qt/rpicoin/qtutils.h \
+  qt/rpicoin/expandablebutton.h \
+  qt/rpicoin/topbar.h \
+  qt/rpicoin/txrow.h \
+  qt/rpicoin/addressholder.h \
+  qt/rpicoin/addressfilterproxymodel.h \
+  qt/rpicoin/dashboardwidget.h \
+  qt/rpicoin/addresslabelrow.h \
+  qt/rpicoin/contactdropdownrow.h \
+  qt/rpicoin/mninfodialog.h \
+  qt/rpicoin/optionbutton.h \
+  qt/rpicoin/coldstakingmodel.h \
+  qt/rpicoin/mnmodel.h \
+  qt/rpicoin/masternodewizarddialog.h \
+  qt/rpicoin/mnrow.h \
+  qt/rpicoin/masternodeswidget.h \
+  qt/rpicoin/myaddressrow.h \
+  qt/rpicoin/csrow.h \
+  qt/rpicoin/contactsdropdown.h \
+  qt/rpicoin/sendchangeaddressdialog.h \
+  qt/rpicoin/sendconfirmdialog.h \
+  qt/rpicoin/sendcustomfeedialog.h \
+  qt/rpicoin/sendchangeaddressdialog.h \
+  qt/rpicoin/sendmultirow.h \
+  qt/rpicoin/send.h \
+  qt/rpicoin/addnewaddressdialog.h \
+  qt/rpicoin/addnewcontactdialog.h \
+  qt/rpicoin/requestdialog.h \
+  qt/rpicoin/receivewidget.h \
+  qt/rpicoin/tooltipmenu.h \
+  qt/rpicoin/addresseswidget.h \
+  qt/rpicoin/defaultdialog.h \
+  qt/rpicoin/coldstakingwidget.h \
+  qt/rpicoin/settings/settingsbackupwallet.h \
+  qt/rpicoin/settings/settingsexportcsv.h \
+  qt/rpicoin/settings/settingsbittoolwidget.h \
+  qt/rpicoin/settings/settingsconsolewidget.h \
+  qt/rpicoin/settings/settingsdisplayoptionswidget.h \
+  qt/rpicoin/settings/settingsfaqwidget.h \
+  qt/rpicoin/settings/settingsinformationwidget.h \
+  qt/rpicoin/settings/settingsmainoptionswidget.h \
+  qt/rpicoin/settings/settingsmultisenddialog.h \
+  qt/rpicoin/settings/settingsmultisendwidget.h \
+  qt/rpicoin/settings/settingssignmessagewidgets.h \
+  qt/rpicoin/settings/settingswalletoptionswidget.h \
+  qt/rpicoin/settings/settingswalletrepairwidget.h \
+  qt/rpicoin/settings/settingswidget.h \
+  qt/rpicoin/welcomecontentwidget.h \
+  qt/rpicoin/splash.h
 
 RES_ICONS = \
   qt/res/icons/bitcoin.ico \
@@ -289,218 +289,218 @@ RES_ICONS = \
   qt/res/icons/ic-transaction-mint.svg \
   qt/res/icons/ic-transaction-sent.svg \
   qt/res/icons/ic-transaction-staked.svg \
-  qt/pivx/res/img/bg-dashboard-banner.png \
-  qt/pivx/res/img/bg-multi-number-dark.svg \
-  qt/pivx/res/img/ic-check-locked.svg \
-  qt/pivx/res/img/ic-nav-address.svg \
-  qt/pivx/res/img/ic-update.svg \
-  qt/pivx/res/img/bg-multi-number.svg \
-  qt/pivx/res/img/ic-check-mint-off.svg \
-  qt/pivx/res/img/ic-nav-cold-staking.svg \
-  qt/pivx/res/img/ic-nav-cold-staking-active.svg \
-  qt/pivx/res/img/ic-nav-dashboard-active.svg \
-  qt/pivx/res/img/ic-wallet-status-locked.svg \
-  qt/pivx/res/img/bg-splash.svg \
-  qt/pivx/res/img/bg-splash.png \
-  qt/pivx/res/img/ic-check-mint.svg \
-  qt/pivx/res/img/ic-nav-dashboard-hover.svg \
-  qt/pivx/res/img/ic-wallet-status-staking.svg \
-  qt/pivx/res/img/ic-check-peers-off.svg \
-  qt/pivx/res/img/ic-nav-dashboard.svg \
-  qt/pivx/res/img/ic-wallet-status-unlocked.svg \
-  qt/pivx/res/img/ic-check-peers.svg \
-  qt/pivx/res/img/ic-nav-master-active.svg \
-  qt/pivx/res/img/ic-watch-password-white.svg \
-  qt/pivx/res/img/bg-welcome-container.jpg \
-  qt/pivx/res/img/bg-welcome-container.png \
-  qt/pivx/res/img/bg-welcome-container.svg \
-  qt/pivx/res/img/bg-welcome-container@2x.png \
-  qt/pivx/res/img/bg-welcome-container@3x.png \
-  qt/pivx/res/img/ic-check-staking-off.svg \
-  qt/pivx/res/img/ic-nav-master-hover.svg \
-  qt/pivx/res/img/ic-watch-password.svg \
-  qt/pivx/res/img/bg-welcome.jpg \
-  qt/pivx/res/img/bg-welcome.svg \
-  qt/pivx/res/img/bg-welcome@2x.jpg \
-  qt/pivx/res/img/bg-welcome@3x.jpg \
-  qt/pivx/res/img/bg-welcome.png \
-  qt/pivx/res/img/ic-check-staking.svg \
-  qt/pivx/res/img/ic-nav-master.svg \
-  qt/pivx/res/img/img-dashboard-banner.jpg \
-  qt/pivx/res/img/btn-radio-active.svg \
-  qt/pivx/res/img/ic-check-sync-off.svg \
-  qt/pivx/res/img/ic-nav-privacy-active.svg \
-  qt/pivx/res/img/img-empty-contacts.svg \
-  qt/pivx/res/img/btn-radio-off.svg \
-  qt/pivx/res/img/ic-check-sync.png \
-  qt/pivx/res/img/ic-nav-privacy-hover.svg \
-  qt/pivx/res/img/img-empty-dark-contacts.svg \
-  qt/pivx/res/img/ic-contact-arrow-down.svg \
-  qt/pivx/res/img/ic-contact-arrow-down-white.svg \
-  qt/pivx/res/img/ic-check-sync.svg \
-  qt/pivx/res/img/ic-check-faq.svg \
-  qt/pivx/res/img/ic-nav-privacy.svg \
-  qt/pivx/res/img/img-empty-dark-error.svg \
-  qt/pivx/res/img/ic-add-label.svg \
-  qt/pivx/res/img/ic-pending.svg \
-  qt/pivx/res/img/ic-check-theme-dark.svg \
-  qt/pivx/res/img/ic-nav-receive-active.svg \
-  qt/pivx/res/img/img-empty-dark-masternode.svg \
-  qt/pivx/res/img/ic-add-liliac.svg \
-  qt/pivx/res/img/ic-check-theme-light.svg \
-  qt/pivx/res/img/ic-nav-receive-hover.svg \
-  qt/pivx/res/img/img-empty-dark-multisend.svg \
-  qt/pivx/res/img/ic-add-purple.svg \
-  qt/pivx/res/img/ic-check-white.svg \
-  qt/pivx/res/img/ic-nav-receive.svg \
-  qt/pivx/res/img/img-empty-dark-peers.svg \
-  qt/pivx/res/img/ic-add.svg \
-  qt/pivx/res/img/ic-check.svg \
-  qt/pivx/res/img/ic-nav-send-active.svg \
-  qt/pivx/res/img/img-empty-dark-staking-off.svg \
-  qt/pivx/res/img/img-empty-dark-staking-on.svg \
-  qt/pivx/res/img/ic-address-book-grey.svg \
-  qt/pivx/res/img/ic-chevron-left.svg \
-  qt/pivx/res/img/ic-nav-send-hover.svg \
-  qt/pivx/res/img/img-empty-dark-transactions.svg \
-  qt/pivx/res/img/ic-address-book-white.svg \
-  qt/pivx/res/img/ic-chevron-right.svg \
-  qt/pivx/res/img/ic-nav-send.svg \
-  qt/pivx/res/img/img-empty-error.svg \
-  qt/pivx/res/img/ic-address-book.svg \
-  qt/pivx/res/img/ic-clear-liliac.svg \
-  qt/pivx/res/img/ic-nav-settings-active.svg \
-  qt/pivx/res/img/img-empty-masternode.svg \
-  qt/pivx/res/img/ic-address-send-white.svg \
-  qt/pivx/res/img/ic-clear-purple.svg \
-  qt/pivx/res/img/ic-nav-settings-hover.svg \
-  qt/pivx/res/img/img-empty-multisend.svg \
-  qt/pivx/res/img/ic-address-send.svg \
-  qt/pivx/res/img/ic-close-white.svg \
-  qt/pivx/res/img/ic-nav-settings.svg \
-  qt/pivx/res/img/img-empty-peers.svg \
-  qt/pivx/res/img/img-empty-privacy.svg \
-  qt/pivx/res/img/img-empty-privacy-dark.svg \
-  qt/pivx/res/img/ic-arrow-drop-down-white.svg \
-  qt/pivx/res/img/ic-close.svg \
-  qt/pivx/res/img/ic-radio-liliac-on.svg \
-  qt/pivx/res/img/img-empty-staking-off.svg \
-  qt/pivx/res/img/ic-arrow-drop-down.svg \
-  qt/pivx/res/img/ic-coin-piv.svg \
-  qt/pivx/res/img/ic-receive-off.svg \
-  qt/pivx/res/img/img-empty-staking-on.svg \
-  qt/pivx/res/img/ic-arrow-drop-up-white.svg \
-  qt/pivx/res/img/ic-coin-zpiv.png \
-  qt/pivx/res/img/ic-receive-on.svg \
-  qt/pivx/res/img/img-empty-transactions.svg \
-  qt/pivx/res/img/ic-arrow-drop-up.svg \
-  qt/pivx/res/img/ic-coin-zpiv.svg \
-  qt/pivx/res/img/ic-received.svg \
-  qt/pivx/res/img/img-logo-pivx.png \
-  qt/pivx/res/img/ic-arrow-drop-white-down.svg \
-  qt/pivx/res/img/ic-combo-box.svg \
-  qt/pivx/res/img/ic-send.svg \
-  qt/pivx/res/img/img-logo-pivx@2x.png \
-  qt/pivx/res/img/ic-arrow-purple-down.svg \
-  qt/pivx/res/img/ic-connect.svg \
-  qt/pivx/res/img/ic-submenu-lock.svg \
-  qt/pivx/res/img/img-logo-pivx@3x.png \
-  qt/pivx/res/img/img-logo-pivx.svg \
-  qt/pivx/res/img/ic-arrow-right-white.svg \
-  qt/pivx/res/img/ic-arrow-left-white.svg \
-  qt/pivx/res/img/ic-arrow-left.svg \
-  qt/pivx/res/img/ic-copy-liliac.svg \
-  qt/pivx/res/img/ic-submenu-staking.svg \
-  qt/pivx/res/img/img-nav-logo-pivx.png \
-  qt/pivx/res/img/ic-arrow-right.svg \
-  qt/pivx/res/img/ic-copy.svg \
-  qt/pivx/res/img/ic-copy-big.svg \
-  qt/pivx/res/img/ic-copy-big-white.svg \
-  qt/pivx/res/img/ic-submenu-unlock.svg \
-  qt/pivx/res/img/img-nav-logo.png \
-  qt/pivx/res/img/ic-arrow-white-left.svg \
-  qt/pivx/res/img/ic-exit.svg \
-  qt/pivx/res/img/ic-switch-liliac-on.svg \
-  qt/pivx/res/img/img-nav-logo.svg \
-  qt/pivx/res/img/ic-arrow-white-right.svg \
-  qt/pivx/res/img/ic-expand.svg \
-  qt/pivx/res/img/ic-switch-off.svg \
-  qt/pivx/res/img/img-qr-test-big.png \
-  qt/pivx/res/img/ic-check-active.svg \
-  qt/pivx/res/img/ic-folder.svg \
-  qt/pivx/res/img/ic-switch-on.svg \
-  qt/pivx/res/img/img-qr-test.png \
-  qt/pivx/res/img/ic-check-box.svg \
-  qt/pivx/res/img/ic-check-box-dark-active.svg \
-  qt/pivx/res/img/ic-check-box-indeterminate.svg \
-  qt/pivx/res/img/ic-check-box-liliac-indeterminate.svg \
-  qt/pivx/res/img/ic-label-liliac.svg \
-  qt/pivx/res/img/ic-transaction-warning.svg \
-  qt/pivx/res/img/ic-transaction-mint.svg \
-  qt/pivx/res/img/ic-transaction-mint-inactive.svg \
-  qt/pivx/res/img/ic-check-cold-staking.svg \
-  qt/pivx/res/img/ic-check-cold-staking-off.svg \
-  qt/pivx/res/img/ic-check-cold-staking-enabled.svg \
-  qt/pivx/res/img/dark/ic-transaction-cs-contract.svg \
-  qt/pivx/res/img/dark/ic-transaction-cs-contract-inactive.svg \
-  qt/pivx/res/img/img-qr.svg \
-  qt/pivx/res/img/ic-check-connect-off.svg \
-  qt/pivx/res/img/ic-check-tor-off.svg \
-  qt/pivx/res/img/ic-check-tor.svg \
-  qt/pivx/res/img/ic-label.svg \
-  qt/pivx/res/img/ic-transaction-received.svg \
-  qt/pivx/res/img/dark/ic-transaction-received.svg \
-  qt/pivx/res/img/dark/ic-transaction-warning.svg \
-  qt/pivx/res/img/dark/ic-transaction-mint.svg \
-  qt/pivx/res/img/dark/ic-transaction-mint-inactive.svg \
-  qt/pivx/res/img/ic-transaction-received-inactive.svg \
-  qt/pivx/res/img/dark/ic-transaction-received-inactive.svg \
-  qt/pivx/res/img/img-welcome-step1.png \
-  qt/pivx/res/img/ic-check-connect.svg \
-  qt/pivx/res/img/ic-menu-hover.svg \
-  qt/pivx/res/img/ic-transaction-sent.svg \
-  qt/pivx/res/img/ic-transaction-sent-inactive.svg \
-  qt/pivx/res/img/dark/ic-transaction-sent.svg \
-  qt/pivx/res/img/dark/ic-transaction-sent-inactive.svg \
-  qt/pivx/res/img/img-welcome-step2.png \
-  qt/pivx/res/img/ic-check-dark.svg \
-  qt/pivx/res/img/ic-mint.svg \
-  qt/pivx/res/img/ic-transaction-staked.svg \
-  qt/pivx/res/img/ic-transaction-staked-inactive.svg \
-  qt/pivx/res/img/dark/ic-transaction-staked.svg \
-  qt/pivx/res/img/dark/ic-transaction-staked-inactive.svg \
-  qt/pivx/res/img/img-welcome-step3.png \
-  qt/pivx/res/img/ic-check-liliac-on.svg \
-  qt/pivx/res/img/ic-nav-address-active.svg \
-  qt/pivx/res/img/ic-unlock-staking.svg \
-  qt/pivx/res/img/img-welcome-step4.png \
-  qt/pivx/res/img/ic-check-locked-off.svg \
-  qt/pivx/res/img/ic-nav-address-hover.svg \
-  qt/pivx/res/img/ic-update-liliac.svg \
-  qt/pivx/res/img/ic-arrow-drop-down-purple.svg \
-  qt/pivx/res/img/ic-arrow-drop-up-purple.svg \
-  qt/pivx/res/img/ic-check-liliac-indeterminate.svg \
-  qt/pivx/res/img/ic-check-box-liliac-indeterminate.svg \
-  qt/pivx/res/img/ic-transaction-stake-delegated.svg \
-  qt/pivx/res/img/ic-transaction-stake-delegated-inactive.svg \
-  qt/pivx/res/img/ic-transaction-stake-hot.svg \
-  qt/pivx/res/img/ic-transaction-stake-hot-inactive.svg \
-  qt/pivx/res/img/dark/ic-transaction-stake-hot.svg \
-  qt/pivx/res/img/dark/ic-transaction-stake-hot-inactive.svg \
-  qt/pivx/res/img/dark/ic-transaction-stake-delegated.svg \
-  qt/pivx/res/img/dark/ic-transaction-stake-delegated-inactive.svg \
-  qt/pivx/res/img/ic-transaction-cs-contract.svg \
-  qt/pivx/res/img/ic-transaction-cs-contract-inactive.svg \
-  qt/pivx/res/img/ic-check-box-indeterminate.svg \
-  qt/pivx/res/img/ani-loading-dark.gif \
-  qt/pivx/res/img/ani-loading.gif
+  qt/rpicoin/res/img/bg-dashboard-banner.png \
+  qt/rpicoin/res/img/bg-multi-number-dark.svg \
+  qt/rpicoin/res/img/ic-check-locked.svg \
+  qt/rpicoin/res/img/ic-nav-address.svg \
+  qt/rpicoin/res/img/ic-update.svg \
+  qt/rpicoin/res/img/bg-multi-number.svg \
+  qt/rpicoin/res/img/ic-check-mint-off.svg \
+  qt/rpicoin/res/img/ic-nav-cold-staking.svg \
+  qt/rpicoin/res/img/ic-nav-cold-staking-active.svg \
+  qt/rpicoin/res/img/ic-nav-dashboard-active.svg \
+  qt/rpicoin/res/img/ic-wallet-status-locked.svg \
+  qt/rpicoin/res/img/bg-splash.svg \
+  qt/rpicoin/res/img/bg-splash.png \
+  qt/rpicoin/res/img/ic-check-mint.svg \
+  qt/rpicoin/res/img/ic-nav-dashboard-hover.svg \
+  qt/rpicoin/res/img/ic-wallet-status-staking.svg \
+  qt/rpicoin/res/img/ic-check-peers-off.svg \
+  qt/rpicoin/res/img/ic-nav-dashboard.svg \
+  qt/rpicoin/res/img/ic-wallet-status-unlocked.svg \
+  qt/rpicoin/res/img/ic-check-peers.svg \
+  qt/rpicoin/res/img/ic-nav-master-active.svg \
+  qt/rpicoin/res/img/ic-watch-password-white.svg \
+  qt/rpicoin/res/img/bg-welcome-container.jpg \
+  qt/rpicoin/res/img/bg-welcome-container.png \
+  qt/rpicoin/res/img/bg-welcome-container.svg \
+  qt/rpicoin/res/img/bg-welcome-container@2x.png \
+  qt/rpicoin/res/img/bg-welcome-container@3x.png \
+  qt/rpicoin/res/img/ic-check-staking-off.svg \
+  qt/rpicoin/res/img/ic-nav-master-hover.svg \
+  qt/rpicoin/res/img/ic-watch-password.svg \
+  qt/rpicoin/res/img/bg-welcome.jpg \
+  qt/rpicoin/res/img/bg-welcome.svg \
+  qt/rpicoin/res/img/bg-welcome@2x.jpg \
+  qt/rpicoin/res/img/bg-welcome@3x.jpg \
+  qt/rpicoin/res/img/bg-welcome.png \
+  qt/rpicoin/res/img/ic-check-staking.svg \
+  qt/rpicoin/res/img/ic-nav-master.svg \
+  qt/rpicoin/res/img/img-dashboard-banner.jpg \
+  qt/rpicoin/res/img/btn-radio-active.svg \
+  qt/rpicoin/res/img/ic-check-sync-off.svg \
+  qt/rpicoin/res/img/ic-nav-privacy-active.svg \
+  qt/rpicoin/res/img/img-empty-contacts.svg \
+  qt/rpicoin/res/img/btn-radio-off.svg \
+  qt/rpicoin/res/img/ic-check-sync.png \
+  qt/rpicoin/res/img/ic-nav-privacy-hover.svg \
+  qt/rpicoin/res/img/img-empty-dark-contacts.svg \
+  qt/rpicoin/res/img/ic-contact-arrow-down.svg \
+  qt/rpicoin/res/img/ic-contact-arrow-down-white.svg \
+  qt/rpicoin/res/img/ic-check-sync.svg \
+  qt/rpicoin/res/img/ic-check-faq.svg \
+  qt/rpicoin/res/img/ic-nav-privacy.svg \
+  qt/rpicoin/res/img/img-empty-dark-error.svg \
+  qt/rpicoin/res/img/ic-add-label.svg \
+  qt/rpicoin/res/img/ic-pending.svg \
+  qt/rpicoin/res/img/ic-check-theme-dark.svg \
+  qt/rpicoin/res/img/ic-nav-receive-active.svg \
+  qt/rpicoin/res/img/img-empty-dark-masternode.svg \
+  qt/rpicoin/res/img/ic-add-liliac.svg \
+  qt/rpicoin/res/img/ic-check-theme-light.svg \
+  qt/rpicoin/res/img/ic-nav-receive-hover.svg \
+  qt/rpicoin/res/img/img-empty-dark-multisend.svg \
+  qt/rpicoin/res/img/ic-add-purple.svg \
+  qt/rpicoin/res/img/ic-check-white.svg \
+  qt/rpicoin/res/img/ic-nav-receive.svg \
+  qt/rpicoin/res/img/img-empty-dark-peers.svg \
+  qt/rpicoin/res/img/ic-add.svg \
+  qt/rpicoin/res/img/ic-check.svg \
+  qt/rpicoin/res/img/ic-nav-send-active.svg \
+  qt/rpicoin/res/img/img-empty-dark-staking-off.svg \
+  qt/rpicoin/res/img/img-empty-dark-staking-on.svg \
+  qt/rpicoin/res/img/ic-address-book-grey.svg \
+  qt/rpicoin/res/img/ic-chevron-left.svg \
+  qt/rpicoin/res/img/ic-nav-send-hover.svg \
+  qt/rpicoin/res/img/img-empty-dark-transactions.svg \
+  qt/rpicoin/res/img/ic-address-book-white.svg \
+  qt/rpicoin/res/img/ic-chevron-right.svg \
+  qt/rpicoin/res/img/ic-nav-send.svg \
+  qt/rpicoin/res/img/img-empty-error.svg \
+  qt/rpicoin/res/img/ic-address-book.svg \
+  qt/rpicoin/res/img/ic-clear-liliac.svg \
+  qt/rpicoin/res/img/ic-nav-settings-active.svg \
+  qt/rpicoin/res/img/img-empty-masternode.svg \
+  qt/rpicoin/res/img/ic-address-send-white.svg \
+  qt/rpicoin/res/img/ic-clear-purple.svg \
+  qt/rpicoin/res/img/ic-nav-settings-hover.svg \
+  qt/rpicoin/res/img/img-empty-multisend.svg \
+  qt/rpicoin/res/img/ic-address-send.svg \
+  qt/rpicoin/res/img/ic-close-white.svg \
+  qt/rpicoin/res/img/ic-nav-settings.svg \
+  qt/rpicoin/res/img/img-empty-peers.svg \
+  qt/rpicoin/res/img/img-empty-privacy.svg \
+  qt/rpicoin/res/img/img-empty-privacy-dark.svg \
+  qt/rpicoin/res/img/ic-arrow-drop-down-white.svg \
+  qt/rpicoin/res/img/ic-close.svg \
+  qt/rpicoin/res/img/ic-radio-liliac-on.svg \
+  qt/rpicoin/res/img/img-empty-staking-off.svg \
+  qt/rpicoin/res/img/ic-arrow-drop-down.svg \
+  qt/rpicoin/res/img/ic-coin-rpi.svg \
+  qt/rpicoin/res/img/ic-receive-off.svg \
+  qt/rpicoin/res/img/img-empty-staking-on.svg \
+  qt/rpicoin/res/img/ic-arrow-drop-up-white.svg \
+  qt/rpicoin/res/img/ic-coin-zrpi.png \
+  qt/rpicoin/res/img/ic-receive-on.svg \
+  qt/rpicoin/res/img/img-empty-transactions.svg \
+  qt/rpicoin/res/img/ic-arrow-drop-up.svg \
+  qt/rpicoin/res/img/ic-coin-zrpi.svg \
+  qt/rpicoin/res/img/ic-received.svg \
+  qt/rpicoin/res/img/img-logo-rpicoin.png \
+  qt/rpicoin/res/img/ic-arrow-drop-white-down.svg \
+  qt/rpicoin/res/img/ic-combo-box.svg \
+  qt/rpicoin/res/img/ic-send.svg \
+  qt/rpicoin/res/img/img-logo-rpicoin@2x.png \
+  qt/rpicoin/res/img/ic-arrow-purple-down.svg \
+  qt/rpicoin/res/img/ic-connect.svg \
+  qt/rpicoin/res/img/ic-submenu-lock.svg \
+  qt/rpicoin/res/img/img-logo-rpicoin@3x.png \
+  qt/rpicoin/res/img/img-logo-rpicoin.svg \
+  qt/rpicoin/res/img/ic-arrow-right-white.svg \
+  qt/rpicoin/res/img/ic-arrow-left-white.svg \
+  qt/rpicoin/res/img/ic-arrow-left.svg \
+  qt/rpicoin/res/img/ic-copy-liliac.svg \
+  qt/rpicoin/res/img/ic-submenu-staking.svg \
+  qt/rpicoin/res/img/img-nav-logo-rpicoin.png \
+  qt/rpicoin/res/img/ic-arrow-right.svg \
+  qt/rpicoin/res/img/ic-copy.svg \
+  qt/rpicoin/res/img/ic-copy-big.svg \
+  qt/rpicoin/res/img/ic-copy-big-white.svg \
+  qt/rpicoin/res/img/ic-submenu-unlock.svg \
+  qt/rpicoin/res/img/img-nav-logo.png \
+  qt/rpicoin/res/img/ic-arrow-white-left.svg \
+  qt/rpicoin/res/img/ic-exit.svg \
+  qt/rpicoin/res/img/ic-switch-liliac-on.svg \
+  qt/rpicoin/res/img/img-nav-logo.svg \
+  qt/rpicoin/res/img/ic-arrow-white-right.svg \
+  qt/rpicoin/res/img/ic-expand.svg \
+  qt/rpicoin/res/img/ic-switch-off.svg \
+  qt/rpicoin/res/img/img-qr-test-big.png \
+  qt/rpicoin/res/img/ic-check-active.svg \
+  qt/rpicoin/res/img/ic-folder.svg \
+  qt/rpicoin/res/img/ic-switch-on.svg \
+  qt/rpicoin/res/img/img-qr-test.png \
+  qt/rpicoin/res/img/ic-check-box.svg \
+  qt/rpicoin/res/img/ic-check-box-dark-active.svg \
+  qt/rpicoin/res/img/ic-check-box-indeterminate.svg \
+  qt/rpicoin/res/img/ic-check-box-liliac-indeterminate.svg \
+  qt/rpicoin/res/img/ic-label-liliac.svg \
+  qt/rpicoin/res/img/ic-transaction-warning.svg \
+  qt/rpicoin/res/img/ic-transaction-mint.svg \
+  qt/rpicoin/res/img/ic-transaction-mint-inactive.svg \
+  qt/rpicoin/res/img/ic-check-cold-staking.svg \
+  qt/rpicoin/res/img/ic-check-cold-staking-off.svg \
+  qt/rpicoin/res/img/ic-check-cold-staking-enabled.svg \
+  qt/rpicoin/res/img/dark/ic-transaction-cs-contract.svg \
+  qt/rpicoin/res/img/dark/ic-transaction-cs-contract-inactive.svg \
+  qt/rpicoin/res/img/img-qr.svg \
+  qt/rpicoin/res/img/ic-check-connect-off.svg \
+  qt/rpicoin/res/img/ic-check-tor-off.svg \
+  qt/rpicoin/res/img/ic-check-tor.svg \
+  qt/rpicoin/res/img/ic-label.svg \
+  qt/rpicoin/res/img/ic-transaction-received.svg \
+  qt/rpicoin/res/img/dark/ic-transaction-received.svg \
+  qt/rpicoin/res/img/dark/ic-transaction-warning.svg \
+  qt/rpicoin/res/img/dark/ic-transaction-mint.svg \
+  qt/rpicoin/res/img/dark/ic-transaction-mint-inactive.svg \
+  qt/rpicoin/res/img/ic-transaction-received-inactive.svg \
+  qt/rpicoin/res/img/dark/ic-transaction-received-inactive.svg \
+  qt/rpicoin/res/img/img-welcome-step1.png \
+  qt/rpicoin/res/img/ic-check-connect.svg \
+  qt/rpicoin/res/img/ic-menu-hover.svg \
+  qt/rpicoin/res/img/ic-transaction-sent.svg \
+  qt/rpicoin/res/img/ic-transaction-sent-inactive.svg \
+  qt/rpicoin/res/img/dark/ic-transaction-sent.svg \
+  qt/rpicoin/res/img/dark/ic-transaction-sent-inactive.svg \
+  qt/rpicoin/res/img/img-welcome-step2.png \
+  qt/rpicoin/res/img/ic-check-dark.svg \
+  qt/rpicoin/res/img/ic-mint.svg \
+  qt/rpicoin/res/img/ic-transaction-staked.svg \
+  qt/rpicoin/res/img/ic-transaction-staked-inactive.svg \
+  qt/rpicoin/res/img/dark/ic-transaction-staked.svg \
+  qt/rpicoin/res/img/dark/ic-transaction-staked-inactive.svg \
+  qt/rpicoin/res/img/img-welcome-step3.png \
+  qt/rpicoin/res/img/ic-check-liliac-on.svg \
+  qt/rpicoin/res/img/ic-nav-address-active.svg \
+  qt/rpicoin/res/img/ic-unlock-staking.svg \
+  qt/rpicoin/res/img/img-welcome-step4.png \
+  qt/rpicoin/res/img/ic-check-locked-off.svg \
+  qt/rpicoin/res/img/ic-nav-address-hover.svg \
+  qt/rpicoin/res/img/ic-update-liliac.svg \
+  qt/rpicoin/res/img/ic-arrow-drop-down-purple.svg \
+  qt/rpicoin/res/img/ic-arrow-drop-up-purple.svg \
+  qt/rpicoin/res/img/ic-check-liliac-indeterminate.svg \
+  qt/rpicoin/res/img/ic-check-box-liliac-indeterminate.svg \
+  qt/rpicoin/res/img/ic-transaction-stake-delegated.svg \
+  qt/rpicoin/res/img/ic-transaction-stake-delegated-inactive.svg \
+  qt/rpicoin/res/img/ic-transaction-stake-hot.svg \
+  qt/rpicoin/res/img/ic-transaction-stake-hot-inactive.svg \
+  qt/rpicoin/res/img/dark/ic-transaction-stake-hot.svg \
+  qt/rpicoin/res/img/dark/ic-transaction-stake-hot-inactive.svg \
+  qt/rpicoin/res/img/dark/ic-transaction-stake-delegated.svg \
+  qt/rpicoin/res/img/dark/ic-transaction-stake-delegated-inactive.svg \
+  qt/rpicoin/res/img/ic-transaction-cs-contract.svg \
+  qt/rpicoin/res/img/ic-transaction-cs-contract-inactive.svg \
+  qt/rpicoin/res/img/ic-check-box-indeterminate.svg \
+  qt/rpicoin/res/img/ani-loading-dark.gif \
+  qt/rpicoin/res/img/ani-loading.gif
 
 
 
 BITCOIN_QT_BASE_CPP = \
   qt/bantablemodel.cpp \
   qt/bitcoinaddressvalidator.cpp \
-  qt/pivx/pivxgui.cpp \
+  qt/rpicoin/rpicoingui.cpp \
   qt/bitcoinunits.cpp \
   qt/clientmodel.cpp \
   qt/csvmodelwriter.cpp \
@@ -536,65 +536,65 @@ BITCOIN_QT_WALLET_CPP = \
   qt/transactiontablemodel.cpp \
   qt/walletmodel.cpp \
   qt/walletmodeltransaction.cpp \
-  qt/pivx/loadingdialog.cpp \
-  qt/pivx/pwidget.cpp \
-  qt/pivx/focuseddialog.cpp \
-  qt/pivx/guitransactionsutils.cpp \
-  qt/pivx/snackbar.cpp \
-  qt/pivx/navmenuwidget.cpp \
-  qt/pivx/lockunlock.cpp \
-  qt/pivx/receivedialog.cpp \
-  qt/pivx/furabstractlistitemdelegate.cpp \
-  qt/pivx/txviewholder.cpp \
-  qt/pivx/qtutils.cpp \
-  qt/pivx/expandablebutton.cpp \
-  qt/pivx/topbar.cpp \
-  qt/pivx/txrow.cpp \
-  qt/pivx/addressholder.cpp \
-  qt/pivx/addressfilterproxymodel.cpp \
-  qt/pivx/dashboardwidget.cpp \
-  qt/pivx/addresslabelrow.cpp \
-  qt/pivx/contactdropdownrow.cpp \
-  qt/pivx/contactsdropdown.cpp \
-  qt/pivx/optionbutton.cpp \
-  qt/pivx/mninfodialog.cpp \
-  qt/pivx/coldstakingmodel.cpp \
-  qt/pivx/mnmodel.cpp \
-  qt/pivx/masternodewizarddialog.cpp \
-  qt/pivx/mnrow.cpp \
-  qt/pivx/masternodeswidget.cpp \
-  qt/pivx/myaddressrow.cpp \
-  qt/pivx/csrow.cpp \
-  qt/pivx/sendchangeaddressdialog.cpp \
-  qt/pivx/sendconfirmdialog.cpp \
-  qt/pivx/sendcustomfeedialog.cpp \
-  qt/pivx/sendchangeaddressdialog.cpp \
-  qt/pivx/sendmultirow.cpp \
-  qt/pivx/send.cpp \
-  qt/pivx/addnewaddressdialog.cpp \
-  qt/pivx/addnewcontactdialog.cpp \
-  qt/pivx/requestdialog.cpp \
-  qt/pivx/receivewidget.cpp \
-  qt/pivx/tooltipmenu.cpp \
-  qt/pivx/addresseswidget.cpp \
-  qt/pivx/defaultdialog.cpp \
-  qt/pivx/coldstakingwidget.cpp \
-  qt/pivx/settings/settingsbackupwallet.cpp \
-  qt/pivx/settings/settingsexportcsv.cpp \
-  qt/pivx/settings/settingsbittoolwidget.cpp \
-  qt/pivx/settings/settingsconsolewidget.cpp \
-  qt/pivx/settings/settingsdisplayoptionswidget.cpp \
-  qt/pivx/settings/settingsfaqwidget.cpp \
-  qt/pivx/settings/settingsinformationwidget.cpp \
-  qt/pivx/settings/settingsmainoptionswidget.cpp \
-  qt/pivx/settings/settingsmultisenddialog.cpp \
-  qt/pivx/settings/settingsmultisendwidget.cpp \
-  qt/pivx/settings/settingssignmessagewidgets.cpp \
-  qt/pivx/settings/settingswalletoptionswidget.cpp \
-  qt/pivx/settings/settingswalletrepairwidget.cpp \
-  qt/pivx/settings/settingswidget.cpp \
-  qt/pivx/welcomecontentwidget.cpp \
-  qt/pivx/splash.cpp
+  qt/rpicoin/loadingdialog.cpp \
+  qt/rpicoin/pwidget.cpp \
+  qt/rpicoin/focuseddialog.cpp \
+  qt/rpicoin/guitransactionsutils.cpp \
+  qt/rpicoin/snackbar.cpp \
+  qt/rpicoin/navmenuwidget.cpp \
+  qt/rpicoin/lockunlock.cpp \
+  qt/rpicoin/receivedialog.cpp \
+  qt/rpicoin/furabstractlistitemdelegate.cpp \
+  qt/rpicoin/txviewholder.cpp \
+  qt/rpicoin/qtutils.cpp \
+  qt/rpicoin/expandablebutton.cpp \
+  qt/rpicoin/topbar.cpp \
+  qt/rpicoin/txrow.cpp \
+  qt/rpicoin/addressholder.cpp \
+  qt/rpicoin/addressfilterproxymodel.cpp \
+  qt/rpicoin/dashboardwidget.cpp \
+  qt/rpicoin/addresslabelrow.cpp \
+  qt/rpicoin/contactdropdownrow.cpp \
+  qt/rpicoin/contactsdropdown.cpp \
+  qt/rpicoin/optionbutton.cpp \
+  qt/rpicoin/mninfodialog.cpp \
+  qt/rpicoin/coldstakingmodel.cpp \
+  qt/rpicoin/mnmodel.cpp \
+  qt/rpicoin/masternodewizarddialog.cpp \
+  qt/rpicoin/mnrow.cpp \
+  qt/rpicoin/masternodeswidget.cpp \
+  qt/rpicoin/myaddressrow.cpp \
+  qt/rpicoin/csrow.cpp \
+  qt/rpicoin/sendchangeaddressdialog.cpp \
+  qt/rpicoin/sendconfirmdialog.cpp \
+  qt/rpicoin/sendcustomfeedialog.cpp \
+  qt/rpicoin/sendchangeaddressdialog.cpp \
+  qt/rpicoin/sendmultirow.cpp \
+  qt/rpicoin/send.cpp \
+  qt/rpicoin/addnewaddressdialog.cpp \
+  qt/rpicoin/addnewcontactdialog.cpp \
+  qt/rpicoin/requestdialog.cpp \
+  qt/rpicoin/receivewidget.cpp \
+  qt/rpicoin/tooltipmenu.cpp \
+  qt/rpicoin/addresseswidget.cpp \
+  qt/rpicoin/defaultdialog.cpp \
+  qt/rpicoin/coldstakingwidget.cpp \
+  qt/rpicoin/settings/settingsbackupwallet.cpp \
+  qt/rpicoin/settings/settingsexportcsv.cpp \
+  qt/rpicoin/settings/settingsbittoolwidget.cpp \
+  qt/rpicoin/settings/settingsconsolewidget.cpp \
+  qt/rpicoin/settings/settingsdisplayoptionswidget.cpp \
+  qt/rpicoin/settings/settingsfaqwidget.cpp \
+  qt/rpicoin/settings/settingsinformationwidget.cpp \
+  qt/rpicoin/settings/settingsmainoptionswidget.cpp \
+  qt/rpicoin/settings/settingsmultisenddialog.cpp \
+  qt/rpicoin/settings/settingsmultisendwidget.cpp \
+  qt/rpicoin/settings/settingssignmessagewidgets.cpp \
+  qt/rpicoin/settings/settingswalletoptionswidget.cpp \
+  qt/rpicoin/settings/settingswalletrepairwidget.cpp \
+  qt/rpicoin/settings/settingswidget.cpp \
+  qt/rpicoin/welcomecontentwidget.cpp \
+  qt/rpicoin/splash.cpp
 
 
 BITCOIN_QT_CPP = $(BITCOIN_QT_BASE_CPP)
@@ -613,8 +613,8 @@ RES_IMAGES = \
 
 RES_CSS = \
   qt/res/css/default.css \
-  qt/pivx/res/css/style_dark.css \
-  qt/pivx/res/css/style_light.css
+  qt/rpicoin/res/css/style_dark.css \
+  qt/rpicoin/res/css/style_light.css
 
 BITCOIN_RC = qt/res/rpicoin-qt-res.rc
 
@@ -645,10 +645,10 @@ $(qt_libbitcoinqt_a_OBJECTS) $(qt_rpicoin_qt_OBJECTS) : | $(QT_MOC)
 $(QT_MOC): $(PROTOBUF_H)
 $(QT_MOC_CPP): $(PROTOBUF_H)
 
-# pivx-qt binary #
-qt_pivx_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+# rpicoin-qt binary #
+qt_rpicoin_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
   $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS) $(SVG_CFLAGS) $(CHARTS_CFLAGS)
-qt_pivx_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+qt_rpicoin_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
 
 qt_rpicoin_qt_SOURCES = qt/rpicoin.cpp
 if TARGET_DARWIN
@@ -664,7 +664,7 @@ endif
 if ENABLE_ZMQ
 qt_rpicoin_qt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 endif
-qt_pivx_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBBITCOIN_ZEROCOIN) $(LIBSAPLING) $(LIBRUSTZCASH) $(LIBZCASH_LIBS) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
+qt_rpicoin_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBBITCOIN_ZEROCOIN) $(LIBSAPLING) $(LIBRUSTZCASH) $(LIBZCASH_LIBS) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
   $(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) $(SVG_LIBS) $(CHARTS_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(LIBSECP256K1) \
   $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
 qt_rpicoin_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)

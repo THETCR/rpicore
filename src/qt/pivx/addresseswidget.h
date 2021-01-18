@@ -5,17 +5,17 @@
 #ifndef ADDRESSESWIDGET_H
 #define ADDRESSESWIDGET_H
 
-#include "qt/pivx/pwidget.h"
+#include "qt/rpicoin/pwidget.h"
 #include "addresstablemodel.h"
-#include "qt/pivx/tooltipmenu.h"
+#include "qt/rpicoin/tooltipmenu.h"
 #include "furabstractlistitemdelegate.h"
-#include "qt/pivx/addressfilterproxymodel.h"
+#include "qt/rpicoin/addressfilterproxymodel.h"
 
 #include <QWidget>
 
 class AddressViewDelegate;
 class TooltipMenu;
-class PIVXGUI;
+class RPICOINGUI;
 class WalletModel;
 
 namespace Ui {
@@ -31,7 +31,7 @@ class AddressesWidget : public PWidget
     Q_OBJECT
 
 public:
-    explicit AddressesWidget(PIVXGUI* parent);
+    explicit AddressesWidget(RPICOINGUI* parent);
     ~AddressesWidget();
 
     void loadWalletModel() override;

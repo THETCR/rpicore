@@ -5,14 +5,14 @@
 #ifndef COLDSTAKINGWIDGET_H
 #define COLDSTAKINGWIDGET_H
 
-#include "qt/pivx/pwidget.h"
-#include "qt/pivx/furabstractlistitemdelegate.h"
-#include "qt/pivx/txviewholder.h"
-#include "qt/pivx/tooltipmenu.h"
-#include "qt/pivx/sendmultirow.h"
-#include "qt/pivx/coldstakingmodel.h"
-#include "qt/pivx/contactsdropdown.h"
-#include "qt/pivx/addressholder.h"
+#include "qt/rpicoin/pwidget.h"
+#include "qt/rpicoin/furabstractlistitemdelegate.h"
+#include "qt/rpicoin/txviewholder.h"
+#include "qt/rpicoin/tooltipmenu.h"
+#include "qt/rpicoin/sendmultirow.h"
+#include "qt/rpicoin/coldstakingmodel.h"
+#include "qt/rpicoin/contactsdropdown.h"
+#include "qt/rpicoin/addressholder.h"
 #include "transactiontablemodel.h"
 #include "addresstablemodel.h"
 #include "addressfilterproxymodel.h"
@@ -24,7 +24,7 @@
 #include <QSpacerItem>
 #include <atomic>
 
-class PIVXGUI;
+class RPICOINGUI;
 class WalletModel;
 class CSDelegationHolder;
 
@@ -41,7 +41,7 @@ class ColdStakingWidget : public PWidget
     Q_OBJECT
 
 public:
-    explicit ColdStakingWidget(PIVXGUI* parent);
+    explicit ColdStakingWidget(RPICOINGUI* parent);
     ~ColdStakingWidget();
 
     void loadWalletModel() override;

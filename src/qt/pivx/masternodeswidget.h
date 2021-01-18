@@ -5,10 +5,10 @@
 #ifndef MASTERNODESWIDGET_H
 #define MASTERNODESWIDGET_H
 
-#include "qt/pivx/pwidget.h"
-#include "qt/pivx/furabstractlistitemdelegate.h"
-#include "qt/pivx/mnmodel.h"
-#include "qt/pivx/tooltipmenu.h"
+#include "qt/rpicoin/pwidget.h"
+#include "qt/rpicoin/furabstractlistitemdelegate.h"
+#include "qt/rpicoin/mnmodel.h"
+#include "qt/rpicoin/tooltipmenu.h"
 #include "walletmodel.h"
 
 #include <atomic>
@@ -16,7 +16,7 @@
 #include <QTimer>
 #include <QWidget>
 
-class PIVXGUI;
+class RPICOINGUI;
 
 namespace Ui {
 class MasterNodesWidget;
@@ -32,7 +32,7 @@ class MasterNodesWidget : public PWidget
 
 public:
 
-    explicit MasterNodesWidget(PIVXGUI *parent = nullptr);
+    explicit MasterNodesWidget(RPICOINGUI *parent = nullptr);
     ~MasterNodesWidget();
 
     void loadWalletModel() override;

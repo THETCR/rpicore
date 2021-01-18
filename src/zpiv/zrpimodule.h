@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 //
-#ifndef PIVX_ZPIVMODULE_H
-#define PIVX_ZPIVMODULE_H
+#ifndef RPICOIN_ZRPIMODULE_H
+#define RPICOIN_ZRPIMODULE_H
 
 #include "libzerocoin/bignum.h"
 #include "libzerocoin/Denominations.h"
@@ -81,7 +81,7 @@ public:
 
 class CValidationState;
 
-namespace ZPIVModule {
+namespace ZRPIModule {
     CDataStream ScriptSigToSerializedSpend(const CScript& scriptSig);
     bool createInput(CTxIn &in, CZerocoinMint& mint, uint256 hashTxOut, const int spendVersion);
     PublicCoinSpend parseCoinSpend(const CTxIn &in);
@@ -100,4 +100,4 @@ namespace ZPIVModule {
 };
 
 
-#endif //PIVX_ZPIVMODULE_H
+#endif //RPICOIN_ZRPIMODULE_H

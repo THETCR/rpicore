@@ -5,16 +5,16 @@
 #ifndef RECEIVEWIDGET_H
 #define RECEIVEWIDGET_H
 
-#include "qt/pivx/pwidget.h"
+#include "qt/rpicoin/pwidget.h"
 #include "addresstablemodel.h"
-#include "qt/pivx/furabstractlistitemdelegate.h"
-#include "qt/pivx/addressfilterproxymodel.h"
+#include "qt/rpicoin/furabstractlistitemdelegate.h"
+#include "qt/rpicoin/addressfilterproxymodel.h"
 
 #include <QSpacerItem>
 #include <QWidget>
 #include <QPixmap>
 
-class PIVXGUI;
+class RPICOINGUI;
 class SendCoinsRecipient;
 
 namespace Ui {
@@ -30,7 +30,7 @@ class ReceiveWidget : public PWidget
     Q_OBJECT
 
 public:
-    explicit ReceiveWidget(PIVXGUI* parent);
+    explicit ReceiveWidget(RPICOINGUI* parent);
     ~ReceiveWidget();
 
     void loadWalletModel() override;

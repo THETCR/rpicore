@@ -2,10 +2,10 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "qt/pivx/settings/settingswidget.h"
-#include "qt/pivx/settings/forms/ui_settingswidget.h"
-#include "qt/pivx/qtutils.h"
-#include "qt/pivx/defaultdialog.h"
+#include "qt/rpicoin/settings/settingswidget.h"
+#include "qt/rpicoin/settings/forms/ui_settingswidget.h"
+#include "qt/rpicoin/qtutils.h"
+#include "qt/rpicoin/defaultdialog.h"
 #include "optionsmodel.h"
 #include "clientmodel.h"
 #include "utilitydialog.h"
@@ -13,7 +13,7 @@
 #include <QScrollBar>
 #include <QDataWidgetMapper>
 
-SettingsWidget::SettingsWidget(PIVXGUI* parent) :
+SettingsWidget::SettingsWidget(RPICOINGUI* parent) :
     PWidget(parent),
     ui(new Ui::SettingsWidget)
 {
@@ -136,7 +136,7 @@ SettingsWidget::SettingsWidget(PIVXGUI* parent) :
 
     // Help
     connect(ui->pushButtonHelp, &QPushButton::clicked, this, &SettingsWidget::onHelpClicked);
-    connect(ui->pushButtonHelp1, &QPushButton::clicked, window, &PIVXGUI::openFAQ);
+    connect(ui->pushButtonHelp1, &QPushButton::clicked, window, &RPICOINGUI::openFAQ);
     connect(ui->pushButtonHelp2, &QPushButton::clicked, this, &SettingsWidget::onAboutClicked);
 
     // Get restart command-line parameters and handle restart

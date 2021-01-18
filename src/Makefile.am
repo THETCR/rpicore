@@ -137,7 +137,7 @@ LIBSAPLING_H = \
   sapling/saplingscriptpubkeyman.h
 
 .PHONY: FORCE cargo-build check-symbols check-security
-# pivx core #
+# rpicoin core #
 BITCOIN_CORE_H = \
   activemasternode.h \
   addrdb.h \

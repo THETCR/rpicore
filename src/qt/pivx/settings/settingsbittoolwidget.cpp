@@ -2,9 +2,9 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "qt/pivx/settings/settingsbittoolwidget.h"
-#include "qt/pivx/settings/forms/ui_settingsbittoolwidget.h"
-#include "qt/pivx/qtutils.h"
+#include "qt/rpicoin/settings/settingsbittoolwidget.h"
+#include "qt/rpicoin/settings/forms/ui_settingsbittoolwidget.h"
+#include "qt/rpicoin/qtutils.h"
 
 #include "guiutil.h"
 #include "walletmodel.h"
@@ -19,7 +19,7 @@
 #include <vector>
 
 
-SettingsBitToolWidget::SettingsBitToolWidget(PIVXGUI* _window, QWidget *parent) :
+SettingsBitToolWidget::SettingsBitToolWidget(RPICOINGUI* _window, QWidget *parent) :
     PWidget(_window, parent),
     ui(new Ui::SettingsBitToolWidget)
 {

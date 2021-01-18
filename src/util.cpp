@@ -85,9 +85,9 @@
 #include <openssl/crypto.h>
 #include <openssl/rand.h>
 
-const char * const PIVX_CONF_FILENAME = "pivx.conf";
-const char * const PIVX_PID_FILENAME = "pivx.pid";
-const char * const PIVX_MASTERNODE_CONF_FILENAME = "masternode.conf";
+const char * const RPICOIN_CONF_FILENAME = "rpicoin.conf";
+const char * const RPICOIN_PID_FILENAME = "rpicoin.pid";
+const char * const RPICOIN_MASTERNODE_CONF_FILENAME = "masternode.conf";
 
 
 // RPICOIN only features
@@ -290,10 +290,10 @@ void PrintExceptionContinue(const std::exception* pex, const char* pszThread)
 
 fs::path GetDefaultDataDir()
 {
-// Windows < Vista: C:\Documents and Settings\Username\Application Data\PIVX
-// Windows >= Vista: C:\Users\Username\AppData\Roaming\PIVX
-// Mac: ~/Library/Application Support/PIVX
-// Unix: ~/.pivx
+// Windows < Vista: C:\Documents and Settings\Username\Application Data\RPICOIN
+// Windows >= Vista: C:\Users\Username\AppData\Roaming\RPICOIN
+// Mac: ~/Library/Application Support/RPICOIN
+// Unix: ~/.rpicoin
 #ifdef WIN32
     // Windows
     return GetSpecialFolderPath(CSIDL_APPDATA) / "RPICOIN";
@@ -324,13 +324,13 @@ static RecursiveMutex csPathCached;
 static fs::path ZC_GetBaseParamsDir()
 {
     // Copied from GetDefaultDataDir and adapter for zcash params.
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\PIVXParams
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\PIVXParams
-    // Mac: ~/Library/Application Support/PIVXParams
-    // Unix: ~/.pivx-params
+    // Windows < Vista: C:\Documents and Settings\Username\Application Data\RPICOINParams
+    // Windows >= Vista: C:\Users\Username\AppData\Roaming\RPICOINParams
+    // Mac: ~/Library/Application Support/RPICOINParams
+    // Unix: ~/.rpicoin-params
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "PIVXParams";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "RPICOINParams";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -342,10 +342,10 @@ static fs::path ZC_GetBaseParamsDir()
     // Mac
     pathRet /= "Library/Application Support";
     TryCreateDirectory(pathRet);
-    return pathRet / "PIVXParams";
+    return pathRet / "RPICOINParams";
 #else
     // Unix
-    return pathRet / ".pivx-params";
+    return pathRet / ".rpicoin-params";
 #endif
 #endif
 }
@@ -452,13 +452,13 @@ void ClearDatadirCache()
 
 fs::path GetConfigFile()
 {
-    fs::path pathConfigFile(GetArg("-conf", PIVX_CONF_FILENAME));
+    fs::path pathConfigFile(GetArg("-conf", RPICOIN_CONF_FILENAME));
     return AbsPathForConfigVal(pathConfigFile, false);
 }
 
 fs::path GetMasternodeConfigFile()
 {
-    fs::path pathConfigFile(GetArg("-mnconf", PIVX_MASTERNODE_CONF_FILENAME));
+    fs::path pathConfigFile(GetArg("-mnconf", RPICOIN_MASTERNODE_CONF_FILENAME));
     return AbsPathForConfigVal(pathConfigFile);
 }
 
@@ -467,7 +467,7 @@ void ReadConfigFile(std::map<std::string, std::string>& mapSettingsRet,
 {
     fs::ifstream streamConfig(GetConfigFile());
     if (!streamConfig.good()) {
-        // Create empty pivx.conf if it does not exist
+        // Create empty rpicoin.conf if it does not exist
         FILE* configFile = fsbridge::fopen(GetConfigFile(), "a");
         if (configFile != NULL)
             fclose(configFile);
@@ -501,7 +501,7 @@ fs::path AbsPathForConfigVal(const fs::path& path, bool net_specific)
 #ifndef WIN32
 fs::path GetPidFile()
 {
-    fs::path pathPidFile(GetArg("-pid", PIVX_PID_FILENAME));
+    fs::path pathPidFile(GetArg("-pid", RPICOIN_PID_FILENAME));
     return AbsPathForConfigVal(pathPidFile);
 }
 

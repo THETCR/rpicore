@@ -70,7 +70,7 @@ class NotificationsTest(RpicoinTestFramework):
         self.nodes[1].generate(51)
         self.sync_all()
 
-        # Give pivxd 10 seconds to write the alert notification
+        # Give rpicoind 10 seconds to write the alert notification
         wait_until(lambda: os.path.isfile(self.alert_filename) and os.path.getsize(self.alert_filename), timeout=10)
 
         with open(self.alert_filename, 'r', encoding='utf8') as f:

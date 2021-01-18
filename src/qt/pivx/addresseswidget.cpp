@@ -2,16 +2,16 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "qt/pivx/addresseswidget.h"
-#include "qt/pivx/forms/ui_addresseswidget.h"
-#include "qt/pivx/addresslabelrow.h"
-#include "qt/pivx/addnewaddressdialog.h"
-#include "qt/pivx/tooltipmenu.h"
+#include "qt/rpicoin/addresseswidget.h"
+#include "qt/rpicoin/forms/ui_addresseswidget.h"
+#include "qt/rpicoin/addresslabelrow.h"
+#include "qt/rpicoin/addnewaddressdialog.h"
+#include "qt/rpicoin/tooltipmenu.h"
 
-#include "qt/pivx/addnewcontactdialog.h"
-#include "qt/pivx/pivxgui.h"
+#include "qt/rpicoin/addnewcontactdialog.h"
+#include "qt/rpicoin/rpicoingui.h"
 #include "guiutil.h"
-#include "qt/pivx/qtutils.h"
+#include "qt/rpicoin/qtutils.h"
 #include "walletmodel.h"
 
 #include <QModelIndex>
@@ -58,7 +58,7 @@ public:
 };
 
 
-AddressesWidget::AddressesWidget(PIVXGUI* parent) :
+AddressesWidget::AddressesWidget(RPICOINGUI* parent) :
     PWidget(parent),
     ui(new Ui::AddressesWidget)
 {
@@ -188,8 +188,8 @@ void AddressesWidget::onStoreContactClicked()
         }
 
         bool isStakingAddress = false;
-        CTxDestination pivAdd = DecodeDestination(address.toUtf8().constData(), isStakingAddress);
-        if (walletModel->isMine(pivAdd)) {
+        CTxDestination rpiAdd = DecodeDestination(address.toUtf8().constData(), isStakingAddress);
+        if (walletModel->isMine(rpiAdd)) {
             setCssEditLine(ui->lineEditAddress, false, true);
             inform(tr("Cannot store your own address as contact"));
             return;
@@ -202,7 +202,7 @@ void AddressesWidget::onStoreContactClicked()
             return;
         }
 
-        if (walletModel->updateAddressBookLabels(pivAdd, label.toUtf8().constData(),
+        if (walletModel->updateAddressBookLabels(rpiAdd, label.toUtf8().constData(),
                 isStakingAddress ? AddressBook::AddressBookPurpose::COLD_STAKING_SEND : AddressBook::AddressBookPurpose::SEND)
                 ) {
             ui->lineEditAddress->setText("");

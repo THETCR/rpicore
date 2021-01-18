@@ -2,16 +2,16 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "qt/pivx/settings/settingsexportcsv.h"
-#include "qt/pivx/settings/forms/ui_settingsexportcsv.h"
+#include "qt/rpicoin/settings/settingsexportcsv.h"
+#include "qt/rpicoin/settings/forms/ui_settingsexportcsv.h"
 #include <QFile>
 #include "csvmodelwriter.h"
 #include "guiutil.h"
 #include "optionsmodel.h"
-#include "qt/pivx/qtutils.h"
+#include "qt/rpicoin/qtutils.h"
 #include "guiinterface.h"
 
-SettingsExportCSV::SettingsExportCSV(PIVXGUI* _window, QWidget *parent) :
+SettingsExportCSV::SettingsExportCSV(RPICOINGUI* _window, QWidget *parent) :
     PWidget(_window, parent),
     ui(new Ui::SettingsExportCSV)
 {
@@ -59,7 +59,7 @@ void SettingsExportCSV::selectFileOutput(const bool& isTxExport)
 {
     QString filename = GUIUtil::getSaveFileName(this,
                                         isTxExport ? tr("Export CSV") : tr("Export Address List"), QString(),
-                                        isTxExport ? tr("PIVX_tx_csv_export(*.csv)") : tr("PIVX_addresses_csv_export(*.csv)"),
+                                        isTxExport ? tr("RPICOIN_tx_csv_export(*.csv)") : tr("RPICOIN_addresses_csv_export(*.csv)"),
                                         nullptr);
 
     if (isTxExport) {

@@ -407,5 +407,5 @@ public:
 uint64_t SipHashUint256(uint64_t k0, uint64_t k1, const uint256& val);
 uint64_t SipHashUint256Extra(uint64_t k0, uint64_t k1, const uint256& val, uint32_t extra);
 
-#endif // PIVX_HASH_H
+#endif // RPICOIN_HASH_H
 

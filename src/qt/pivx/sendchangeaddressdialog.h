@@ -6,8 +6,8 @@
 #define SENDCHANGEADDRESSDIALOG_H
 
 #include "script/standard.h"
-#include "qt/pivx/focuseddialog.h"
-#include "qt/pivx/snackbar.h"
+#include "qt/rpicoin/focuseddialog.h"
+#include "qt/rpicoin/snackbar.h"
 
 class WalletModel;
 

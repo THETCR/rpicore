@@ -225,7 +225,7 @@ set(SERVER_SOURCES
         ./src/sapling/sapling_validation.cpp
         ./src/validation.cpp
         ./src/validationinterface.cpp
-        ./src/zpivchain.cpp
+        ./src/zrpichain.cpp
         )
 add_library(SERVER_A STATIC ${BitcoinHeaders} ${SERVER_SOURCES})
 if(MINIUPNP_FOUND)
@@ -280,7 +280,7 @@ set(WALLET_SOURCES
         ./src/legacy/stakemodifier.cpp
         ./src/wallet/wallet.cpp
         ./src/wallet/walletdb.cpp
-        ./src/zpiv/zpivmodule.cpp
+        ./src/zpiv/zrpimodule.cpp
         ./src/zpiv/zpos.cpp
         ./src/stakeinput.cpp
         )

@@ -34,9 +34,9 @@
 #include <boost/thread/condition_variable.hpp> // for boost::thread_interrupted
 #define CVOIDBEGIN(a)        ((const void*)&(a))
 
-extern const char * const PIVX_CONF_FILENAME;
-extern const char * const PIVX_PID_FILENAME;
-extern const char * const PIVX_MASTERNODE_CONF_FILENAME;
+extern const char * const RPICOIN_CONF_FILENAME;
+extern const char * const RPICOIN_PID_FILENAME;
+extern const char * const RPICOIN_MASTERNODE_CONF_FILENAME;
 extern const char * const DEFAULT_DEBUGLOGFILE;
 
 //RPICOIN only features

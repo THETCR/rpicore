@@ -2,22 +2,22 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "qt/pivx/coldstakingwidget.h"
-#include "qt/pivx/forms/ui_coldstakingwidget.h"
-#include "qt/pivx/qtutils.h"
+#include "qt/rpicoin/coldstakingwidget.h"
+#include "qt/rpicoin/forms/ui_coldstakingwidget.h"
+#include "qt/rpicoin/qtutils.h"
 #include "amount.h"
 #include "guiutil.h"
-#include "qt/pivx/requestdialog.h"
-#include "qt/pivx/tooltipmenu.h"
-#include "qt/pivx/furlistrow.h"
-#include "qt/pivx/sendconfirmdialog.h"
-#include "qt/pivx/addnewcontactdialog.h"
-#include "qt/pivx/guitransactionsutils.h"
+#include "qt/rpicoin/requestdialog.h"
+#include "qt/rpicoin/tooltipmenu.h"
+#include "qt/rpicoin/furlistrow.h"
+#include "qt/rpicoin/sendconfirmdialog.h"
+#include "qt/rpicoin/addnewcontactdialog.h"
+#include "qt/rpicoin/guitransactionsutils.h"
 #include "walletmodel.h"
 #include "optionsmodel.h"
 #include "coincontroldialog.h"
 #include "coincontrol.h"
-#include "qt/pivx/csrow.h"
+#include "qt/rpicoin/csrow.h"
 
 #define DECORATION_SIZE 70
 #define NUM_ITEMS 3
@@ -71,7 +71,7 @@ private:
     CSRow *cachedRow = nullptr;
 };
 
-ColdStakingWidget::ColdStakingWidget(PIVXGUI* parent) :
+ColdStakingWidget::ColdStakingWidget(RPICOINGUI* parent) :
     PWidget(parent),
     ui(new Ui::ColdStakingWidget),
     isLoading(false)

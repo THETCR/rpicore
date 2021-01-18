@@ -6,9 +6,9 @@
 #define NAVMENUWIDGET_H
 
 #include <QWidget>
-#include "qt/pivx/pwidget.h"
+#include "qt/rpicoin/pwidget.h"
 
-class PIVXGUI;
+class RPICOINGUI;
 
 namespace Ui {
 class NavMenuWidget;
@@ -19,7 +19,7 @@ class NavMenuWidget : public PWidget
     Q_OBJECT
 
 public:
-    explicit NavMenuWidget(PIVXGUI* mainWindow, QWidget *parent = nullptr);
+    explicit NavMenuWidget(RPICOINGUI* mainWindow, QWidget *parent = nullptr);
     ~NavMenuWidget();
 
     void loadWalletModel() override;

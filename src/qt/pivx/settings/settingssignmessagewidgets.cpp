@@ -2,9 +2,9 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "qt/pivx/settings/settingssignmessagewidgets.h"
-#include "qt/pivx/settings/forms/ui_settingssignmessagewidgets.h"
-#include "qt/pivx/qtutils.h"
+#include "qt/rpicoin/settings/settingssignmessagewidgets.h"
+#include "qt/rpicoin/settings/forms/ui_settingssignmessagewidgets.h"
+#include "qt/rpicoin/qtutils.h"
 #include "guiutil.h"
 #include "walletmodel.h"
 
@@ -19,7 +19,7 @@
 
 #include <QClipboard>
 
-SettingsSignMessageWidgets::SettingsSignMessageWidgets(PIVXGUI* _window, QWidget *parent) :
+SettingsSignMessageWidgets::SettingsSignMessageWidgets(RPICOINGUI* _window, QWidget *parent) :
     PWidget(_window, parent),
     ui(new Ui::SettingsSignMessageWidgets)
 {
