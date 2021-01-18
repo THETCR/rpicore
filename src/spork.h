@@ -52,7 +52,7 @@ public:
         nTimeSigned(nTimeSigned)
     { }
 
-    uint256 GetHash() const { return HashQuark(BEGIN(nSporkID), END(nTimeSigned)); }
+    uint256 GetHash() const { return SerializeHash(*this); }
 
     // override CSignedMessage functions
     uint256 GetSignatureHash() const override;
