@@ -1,14 +1,4 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2014 The Bitcoin Core developers
-// Distributed under the MIT software license, see the accompanying
-// file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
-#ifndef BITCOIN_CONSENSUS_CONSENSUS_PARAMS_H
-#define BITCOIN_CONSENSUS_CONSENSUS_PARAMS_H
-
-#include "uint256.h"
-#include "amount.h"
-
 // Copyright (c) 2009-2016 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -158,24 +148,15 @@ struct Params {
     int nStakeMinAge;
     int nStakeMinAgeV2;
     //new
-    uint256 hashGenesisBlock;
     bool fPowAllowMinDifficultyBlocks;
-    uint256 powLimit;
     uint256 posLimitV1;
     uint256 posLimitV2;
-    int nBudgetCycleBlocks;
     int nBudgetFeeConfirmations;
     int nCoinbaseMaturity;
     int nFutureTimeDriftPoW;
     int nFutureTimeDriftPoS;
-    int nMasternodeCountDrift;
-    CAmount nMaxMoneyOut;
-    int nPoolMaxTransactions;
-    int64_t nProposalEstablishmentTime;
-    int nStakeMinAge;
     int nStakeMinDepth;
     int64_t nTargetTimespan;
-    int64_t nTargetTimespanV2;
     int64_t nTargetSpacing;
     int nTimeSlotLength;
 
@@ -194,7 +175,6 @@ struct Params {
     int height_ZC_RecalcAccumulators;
 
     // validation by-pass
-    int64_t nRpicoinBadBlockTime;
     unsigned int nRpicoinBadBlockBits;
 
     // Map with network updates
